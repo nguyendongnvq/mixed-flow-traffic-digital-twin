@@ -1,0 +1,29 @@
+{
+  "batch_size": 64,
+  "head_epochs": 24,
+  "fine_tune_epochs": 8,
+  "head_lr": 0.001,
+  "backbone_lr": 0.0001,
+  "patience": 6,
+  "detector_loss_weight": 1.2,
+  "router_loss_weight": 1.0,
+  "detector_pos_weight": 1.4,
+  "detector_focal_gamma": 2.0,
+  "detector_focal_alpha": 0.6,
+  "router_focal_gamma": 2.0,
+  "sampling_weights": {
+    "normal": 1.0,
+    "accident": 2.5,
+    "congestion_spike": 1.8,
+    "zigzag": 1.5,
+    "sudden_stop": 1.0
+  },
+  "class_loss_weights": {
+    "accident": 2.0,
+    "congestion_spike": 1.5,
+    "zigzag": 1.25,
+    "sudden_stop": 1.0
+  },
+  "device": "cpu",
+  "seed": 42
+}

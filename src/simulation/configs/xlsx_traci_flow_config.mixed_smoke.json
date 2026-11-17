@@ -1,0 +1,596 @@
+{
+  "sumo": {
+    "sumocfg_path": "../../../sumo/scenarios/named_roads_updated.mixed_smoke.sumocfg",
+    "route_source_path": "../../../sumo/routes/named_roads_updated.rou.xml",
+    "runtime_route_path": "../../../sumo/routes/named_roads_updated.traci_routes_only.mixed_smoke.rou.xml",
+    "use_gui": false,
+    "step_length_seconds": 1.0,
+    "start_datetime_override": "2025-10-01 00:00:00",
+    "end_datetime_override": "2025-10-01 23:59:59",
+    "seed": 42,
+    "extra_sumo_args": [
+      "--no-internal-links",
+      "true",
+      "--no-warnings"
+    ]
+  },
+  "xlsx": {
+    "path": "../../../SUMO-Simulate.xlsx",
+    "sheet_name": "thiết lập khung thời gian",
+    "start_datetime_cell": "B1",
+    "end_datetime_cell": "B2",
+    "table": {
+      "start_row": 60,
+      "end_row": 200,
+      "date_col": "B",
+      "start_time_col": "C",
+      "end_time_col": "D",
+      "column_map": {
+        "two_lane_lane1": {
+          "xe_dap": {
+            "min": "G",
+            "max": "H"
+          },
+          "xe_may": {
+            "min": "I",
+            "max": "J"
+          },
+          "oto": {
+            "min": "K",
+            "max": "L"
+          },
+          "bus": {
+            "min": "M",
+            "max": "N"
+          },
+          "minibus": {
+            "min": "O",
+            "max": "P"
+          }
+        },
+        "two_lane_lane2": {
+          "xe_dap": {
+            "min": "Q",
+            "max": "R"
+          },
+          "xe_may": {
+            "min": "S",
+            "max": "T"
+          },
+          "oto": {
+            "min": "U",
+            "max": "V"
+          },
+          "bus": {
+            "min": "W",
+            "max": "X"
+          },
+          "minibus": {
+            "min": "Y",
+            "max": "Z"
+          }
+        },
+        "three_lane_lane1": {
+          "xe_dap": {
+            "min": "AA",
+            "max": "AB"
+          },
+          "xe_may": {
+            "min": "AC",
+            "max": "AD"
+          },
+          "oto": {
+            "min": "AE",
+            "max": "AF"
+          },
+          "bus": {
+            "min": "AG",
+            "max": "AH"
+          },
+          "minibus": {
+            "min": "AI",
+            "max": "AJ"
+          }
+        },
+        "three_lane_lane2": {
+          "xe_dap": {
+            "min": "AK",
+            "max": "AL"
+          },
+          "xe_may": {
+            "min": "AM",
+            "max": "AN"
+          },
+          "oto": {
+            "min": "AO",
+            "max": "AP"
+          },
+          "bus": {
+            "min": "AQ",
+            "max": "AR"
+          },
+          "minibus": {
+            "min": "AS",
+            "max": "AT"
+          }
+        },
+        "three_lane_lane3": {
+          "xe_dap": {
+            "min": "AU",
+            "max": "AV"
+          },
+          "xe_may": {
+            "min": "AW",
+            "max": "AX"
+          },
+          "oto": {
+            "min": "AY",
+            "max": "AZ"
+          },
+          "bus": {
+            "min": "BA",
+            "max": "BB"
+          },
+          "minibus": {
+            "min": "BC",
+            "max": "BD"
+          }
+        }
+      }
+    },
+    "calendar": {
+      "weekend_factor_cell": "B75",
+      "holiday_rows": [
+        {
+          "date_cell": "B76",
+          "factor_cell": "C76"
+        }
+      ]
+    }
+  },
+  "traffic": {
+    "rate_bound": "random",
+    "traffic_scale": 0.2,
+    "enable_30_thang_4_routes": false,
+    "vehicle_type_map": {
+      "xe_dap": "bicycle",
+      "xe_may": "motorbike",
+      "oto": "carFast",
+      "bus": "bus",
+      "minibus": "minibus"
+    },
+    "route_profiles": {
+      "two_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "two_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "three_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane3": {
+        "depart_lane": 2,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "anomaly": {
+    "mode": "mixed",
+    "schedule": [
+      {
+        "id": "d01_s01_accident",
+        "step": 3600,
+        "kind": "accident",
+        "edge_id": "693841066#3",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s02_congestion_spike",
+        "step": 9000,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#6",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s03_zigzag",
+        "step": 14400,
+        "kind": "zigzag",
+        "edge_id": "-295853900#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s04_sudden_stop",
+        "step": 19800,
+        "kind": "sudden_stop",
+        "edge_id": "695838784#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s05_accident",
+        "step": 25200,
+        "kind": "accident",
+        "edge_id": "295853897#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s05_congestion_spike",
+        "step": 25200,
+        "kind": "congestion_spike",
+        "edge_id": "694314742#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s06_accident",
+        "step": 30600,
+        "kind": "accident",
+        "edge_id": "694314742#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s06_zigzag",
+        "step": 30600,
+        "kind": "zigzag",
+        "edge_id": "-693841066#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s07_accident",
+        "step": 36000,
+        "kind": "accident",
+        "edge_id": "-693841066#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s07_sudden_stop",
+        "step": 36000,
+        "kind": "sudden_stop",
+        "edge_id": "-295408469#7",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s08_congestion_spike",
+        "step": 41400,
+        "kind": "congestion_spike",
+        "edge_id": "-295408469#7",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s08_zigzag",
+        "step": 41400,
+        "kind": "zigzag",
+        "edge_id": "295853900#8",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s09_congestion_spike",
+        "step": 46800,
+        "kind": "congestion_spike",
+        "edge_id": "295853900#8",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s09_sudden_stop",
+        "step": 46800,
+        "kind": "sudden_stop",
+        "edge_id": "302756236#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s10_zigzag",
+        "step": 52200,
+        "kind": "zigzag",
+        "edge_id": "302756236#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s10_sudden_stop",
+        "step": 52200,
+        "kind": "sudden_stop",
+        "edge_id": "-295853897#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s11_accident",
+        "step": 57600,
+        "kind": "accident",
+        "edge_id": "-295853897#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s11_congestion_spike",
+        "step": 57600,
+        "kind": "congestion_spike",
+        "edge_id": "1281556686#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s11_zigzag",
+        "step": 57600,
+        "kind": "zigzag",
+        "edge_id": "693841066#3",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s12_accident",
+        "step": 63000,
+        "kind": "accident",
+        "edge_id": "1281556686#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s12_congestion_spike",
+        "step": 63000,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#3",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s12_sudden_stop",
+        "step": 63000,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#6",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s13_accident",
+        "step": 68400,
+        "kind": "accident",
+        "edge_id": "693841066#3",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s13_zigzag",
+        "step": 68400,
+        "kind": "zigzag",
+        "edge_id": "295408469#6",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s13_sudden_stop",
+        "step": 68400,
+        "kind": "sudden_stop",
+        "edge_id": "-295853900#9",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s14_congestion_spike",
+        "step": 73800,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#6",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s14_zigzag",
+        "step": 73800,
+        "kind": "zigzag",
+        "edge_id": "-295853900#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s14_sudden_stop",
+        "step": 73800,
+        "kind": "sudden_stop",
+        "edge_id": "695838784#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d01_s15_accident",
+        "step": 79200,
+        "kind": "accident",
+        "edge_id": "-295853900#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d01_s15_congestion_spike",
+        "step": 79200,
+        "kind": "congestion_spike",
+        "edge_id": "695838784#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d01_s15_zigzag",
+        "step": 79200,
+        "kind": "zigzag",
+        "edge_id": "295853897#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d01_s15_sudden_stop",
+        "step": 79200,
+        "kind": "sudden_stop",
+        "edge_id": "694314742#1",
+        "params": {
+          "duration_steps": 900
+        }
+      }
+    ],
+    "label": {
+      "step_output_path": "../../../datasets/raw/sumo_data/anomaly_step_labels_mixed_smoke.csv",
+      "window_output_path": "../../../datasets/raw/sumo_data/anomaly_window_labels_mixed_smoke.csv",
+      "spawn_output_path": "../../../datasets/raw/sumo_data/anomaly_spawn_records_mixed_smoke.json",
+      "window_sec": 300
+    }
+  }
+}

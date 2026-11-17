@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<routes>
+<vType id="carFast"
+       vclass="passenger"
+       maxSpeed="11.11" accel="3.0" decel="5.0"
+       length="5" width="1.5" minGap="2.0" tau="1.5"
+       color="1,1,1"
+       lcStrategic="1.5"
+       lcCooperative="1" />
+
+<vType id="motorbike"
+       vClass="motorcycle" guiShape="motorcycle"
+       maxSpeed="12.50" accel="3.5" decel="5.5"
+       length="1.8" width="0.5"
+       minGap="1.6" minGapLat="0.5" maxSpeedLat="1.4"
+       tau="1" sigma="0.8"
+       color="0,0.9,0.2"
+       lcStrategic="1.5"
+       lcCooperative="1" lcPushy="0.7" lcImpatience="0.7" />
+
+<vType id="bicycle"
+       vClass="bicycle" guiShape="bicycle"
+       maxSpeed="12.50" accel="3.5" decel="5.5"
+       length="1.8" width="0.333"
+       minGap="1.6" minGapLat="0.5" maxSpeedLat="1.4"
+       tau="1" sigma="0.8"
+       color="0,0.2,1"
+       lcStrategic="1.5"
+       lcCooperative="1" lcPushy="0.7" lcImpatience="0.7" />
+
+<vType id="bus"
+       vClass="bus"
+       maxSpeed="8.33" accel="1.4" decel="5.5" emergencyDecel="7.5"
+       length="6" width="1.5"
+       minGap="2.8" minGapLat="3" maxSpeedLat="0.8"
+       tau="1.5" speedFactor="0.9" speedDev="0.05"
+       color="1,0.5,0"
+       lcStrategic="1.5"
+       lcCooperative="1" />
+
+<vType id="minibus"
+       vClass="bus" guiShape="bus"
+       maxSpeed="8.33" accel="1.4" decel="5.5" emergencyDecel="7.5"
+       length="5" width="1.5"
+       minGap="2.8" minGapLat="3" maxSpeedLat="0.8"
+       tau="1.5" speedFactor="0.9" speedDev="0.05"
+       color="1,0.4,0"
+       lcStrategic="1.5"
+       lcCooperative="1"/>
+       
+  <route id="r_duong_30_thang_4_left" edges="295408481#0 295408481#1 295408481#2 295408481#3 E35 E34 295408480#0 295408480#1 295408480#2 E19 E18 295853894#0 295853894#1 295853894#2 E53 E52 295853890#0 295853890#1 295853890#2 E47 E46 295853895#0 295853895#1" />
+  <flow id="f_r_duong_30_thang_4_left_carFast" type="carFast" route="r_duong_30_thang_4_left" begin="0" end="86400" vehsPerHour="70" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_left_motorbike" type="motorbike" route="r_duong_30_thang_4_left" begin="0" end="86400" vehsPerHour="35" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_left_bicycle" type="bicycle" route="r_duong_30_thang_4_left" begin="0" end="86400" vehsPerHour="21" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_left_bus" type="bus" route="r_duong_30_thang_4_left" begin="0" end="86400" vehsPerHour="14" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_30_thang_4_right" edges="295408479#0 295408479#1 295408479#2 E44 E43 295853892#0 295853892#1 295853892#2 E50 E49 372220803#0 372220803#1 372220803#2 E16 E15 295853891#0 295853891#1 295853891#2 E32 E31 110897469#0 110897469#1 110897469#2 110897469#3" />
+  <flow id="f_r_duong_30_thang_4_right_carFast" type="carFast" route="r_duong_30_thang_4_right" begin="0" end="86400" vehsPerHour="70" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_right_motorbike" type="motorbike" route="r_duong_30_thang_4_right" begin="0" end="86400" vehsPerHour="35" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_right_bicycle" type="bicycle" route="r_duong_30_thang_4_right" begin="0" end="86400" vehsPerHour="21" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_30_thang_4_right_bus" type="bus" route="r_duong_30_thang_4_right" begin="0" end="86400" vehsPerHour="14" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_phan_dang_luu_left" edges="295408469#0 295408469#1 295408469#2 295408469#3 295408469#4 295408469#5 295408469#6 295408469#7 295408469#8 295408469#9 295408469#10 295408469#11 695509454#0 695509454#1 695509454#2 695509454#3" />
+  <flow id="f_r_duong_phan_dang_luu_left_carFast" type="carFast" route="r_duong_phan_dang_luu_left" begin="0" end="86400" vehsPerHour="150" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_left_motorbike" type="motorbike" route="r_duong_phan_dang_luu_left" begin="0" end="86400" vehsPerHour="75" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_left_bicycle" type="bicycle" route="r_duong_phan_dang_luu_left" begin="0" end="86400" vehsPerHour="45" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_left_bus" type="bus" route="r_duong_phan_dang_luu_left" begin="0" end="86400" vehsPerHour="30" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_phan_dang_luu_right" edges="-695509454#3 -695509454#2 -695509454#1 -695509454#0 -295408469#11 -295408469#10 -295408469#9 -295408469#8 -295408469#7 -295408469#6 -295408469#5 -295408469#4 -295408469#3 -295408469#2 -295408469#1 -295408469#0" />
+  <flow id="f_r_duong_phan_dang_luu_right_carFast" type="carFast" route="r_duong_phan_dang_luu_right" begin="0" end="86400" vehsPerHour="150" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_right_motorbike" type="motorbike" route="r_duong_phan_dang_luu_right" begin="0" end="86400" vehsPerHour="75" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_right_bicycle" type="bicycle" route="r_duong_phan_dang_luu_right" begin="0" end="86400" vehsPerHour="45" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_phan_dang_luu_right_bus" type="bus" route="r_duong_phan_dang_luu_right" begin="0" end="86400" vehsPerHour="30" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_xo_viet_nghe_tinh_left" edges="1137557402 694314742#0 694314742#1 694314744#0 694314744#1 694314744#2 694314743 694320791#0 694320791#1 694320791#2 694320790#0 694320790#1 694320789#0 694320789#1 694323222#0 694323222#1 694323222#2 694323222#3 694323222#4 694323222#5 694323222#6 694323222#7 694323222#8 694323221#0 694323221#1 302756236#0 302756236#1 302756236#2 302756236#3 302756236#4" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_left_carFast" type="carFast" route="r_duong_xo_viet_nghe_tinh_left" begin="0" end="86400" vehsPerHour="160" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_left_motorbike" type="motorbike" route="r_duong_xo_viet_nghe_tinh_left" begin="0" end="86400" vehsPerHour="80" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_left_bicycle" type="bicycle" route="r_duong_xo_viet_nghe_tinh_left" begin="0" end="86400" vehsPerHour="48" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_left_bus" type="bus" route="r_duong_xo_viet_nghe_tinh_left" begin="0" end="86400" vehsPerHour="32" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_xo_viet_nghe_tinh_right" edges="695838784#0 695838784#1 695838784#2 695838784#3 695838783#0 695838783#1 695838782#0 695838782#1 695838781#0 695838781#1 695838780#0 695838780#1 695838779#1 695838778#0 695838778#1 695838777#0 695838777#1 695838776#0 695838776#1 695838775#0 695838775#1 1281556702 1281556686#0 1281556686#1 1281556686#2 302756237#0 302756237#1" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_right_carFast" type="carFast" route="r_duong_xo_viet_nghe_tinh_right" begin="0" end="86400" vehsPerHour="160" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_right_motorbike" type="motorbike" route="r_duong_xo_viet_nghe_tinh_right" begin="0" end="86400" vehsPerHour="80" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_right_bicycle" type="bicycle" route="r_duong_xo_viet_nghe_tinh_right" begin="0" end="86400" vehsPerHour="48" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_xo_viet_nghe_tinh_right_bus" type="bus" route="r_duong_xo_viet_nghe_tinh_right" begin="0" end="86400" vehsPerHour="32" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_luong_nhu_hoc_left" edges="118555834#0 118555834#1 118555834#2 E40 E46 E45 E44 E41 295853900#0 295853900#1 295853900#2 295853900#3 295853900#4 295853900#5 295853900#6 295853900#7 295853900#8 295853900#9 295853900#10 295853900#11 295853900#12 295853900#13 295853900#14 295853900#15 295853900#16 302756231#0 302756231#1" />
+  <flow id="f_r_duong_luong_nhu_hoc_left_carFast" type="carFast" route="r_duong_luong_nhu_hoc_left" begin="0" end="86400" vehsPerHour="120" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_left_motorbike" type="motorbike" route="r_duong_luong_nhu_hoc_left" begin="0" end="86400" vehsPerHour="60" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_left_bicycle" type="bicycle" route="r_duong_luong_nhu_hoc_left" begin="0" end="86400" vehsPerHour="36" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_left_bus" type="bus" route="r_duong_luong_nhu_hoc_left" begin="0" end="86400" vehsPerHour="24" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_luong_nhu_hoc_right" edges="-302756231#1 -302756231#0 -295853900#16 -295853900#15 -295853900#14 -295853900#13 -295853900#12 -295853900#11 -295853900#10 -295853900#9 -295853900#8 -295853900#7 -295853900#6 -295853900#5 -295853900#4 -295853900#3 -295853900#2 -295853900#1 -295853900#0 -E41 E43 E42 E47 -E40 -118555834#2 -118555834#1 -118555834#0" />
+  <flow id="f_r_duong_luong_nhu_hoc_right_carFast" type="carFast" route="r_duong_luong_nhu_hoc_right" begin="0" end="86400" vehsPerHour="120" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_right_motorbike" type="motorbike" route="r_duong_luong_nhu_hoc_right" begin="0" end="86400" vehsPerHour="60" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_right_bicycle" type="bicycle" route="r_duong_luong_nhu_hoc_right" begin="0" end="86400" vehsPerHour="36" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_luong_nhu_hoc_right_bus" type="bus" route="r_duong_luong_nhu_hoc_right" begin="0" end="86400" vehsPerHour="24" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_huynh_tan_phat_left" edges="255678822#1 E27 E52 E51 E50 E28 295853897#0 295853897#1 295853897#2 295853897#3 295853897#4 295853897#5 295853897#6 295853897#7 295853897#8 295853897#9 295853897#11 295853897#12" />
+  <flow id="f_r_duong_huynh_tan_phat_left_carFast" type="carFast" route="r_duong_huynh_tan_phat_left" begin="0" end="86400" vehsPerHour="130" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_left_motorbike" type="motorbike" route="r_duong_huynh_tan_phat_left" begin="0" end="86400" vehsPerHour="65" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_left_bicycle" type="bicycle" route="r_duong_huynh_tan_phat_left" begin="0" end="86400" vehsPerHour="39" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_left_bus" type="bus" route="r_duong_huynh_tan_phat_left" begin="0" end="86400" vehsPerHour="26" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_huynh_tan_phat_right" edges="-295853897#12 -295853897#11 -295853897#9 -295853897#8 -295853897#7 -295853897#6 -295853897#5 -295853897#4 -295853897#3 -295853897#2 -295853897#1 -295853897#0 -E28 E49 E48 E53 -E27 -255678822#1" />
+  <flow id="f_r_duong_huynh_tan_phat_right_carFast" type="carFast" route="r_duong_huynh_tan_phat_right" begin="0" end="86400" vehsPerHour="130" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_right_motorbike" type="motorbike" route="r_duong_huynh_tan_phat_right" begin="0" end="86400" vehsPerHour="65" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_right_bicycle" type="bicycle" route="r_duong_huynh_tan_phat_right" begin="0" end="86400" vehsPerHour="39" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_huynh_tan_phat_right_bus" type="bus" route="r_duong_huynh_tan_phat_right" begin="0" end="86400" vehsPerHour="26" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_le_thanh_nghi_left" edges="295408456#0 295408456#1 E34 E33 E32 693841066#0 693841066#1 693841066#2 693841066#3 693841066#4 693841066#5 693841066#6 693841066#7 693841066#8 693841066#9 693841066#11 693841066#12 693841066#13 693841066#14 693841066#15 693841066#16 693841066#17 693841066#18 693841066#19 693841066#20 693841066#21" />
+  <flow id="f_r_duong_le_thanh_nghi_left_carFast" type="carFast" route="r_duong_le_thanh_nghi_left" begin="0" end="86400" vehsPerHour="150" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_left_motorbike" type="motorbike" route="r_duong_le_thanh_nghi_left" begin="0" end="86400" vehsPerHour="75" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_left_bicycle" type="bicycle" route="r_duong_le_thanh_nghi_left" begin="0" end="86400" vehsPerHour="45" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_left_bus" type="bus" route="r_duong_le_thanh_nghi_left" begin="0" end="86400" vehsPerHour="30" departLane="best" departPos="base" departSpeed="desired" />
+  <route id="r_duong_le_thanh_nghi_right" edges="-693841066#21 -693841066#20 -693841066#19 -693841066#18 -693841066#17 -693841066#16 -693841066#15 -693841066#14 -693841066#13 -693841066#12 -693841066#11 -693841066#9 -693841066#8 -693841066#7 -693841066#6 -693841066#5 -693841066#4 -693841066#3 -693841066#2 -693841066#1 -693841066#0 E31 E30 E35 -295408456#1 -295408456#0" />
+  <flow id="f_r_duong_le_thanh_nghi_right_carFast" type="carFast" route="r_duong_le_thanh_nghi_right" begin="0" end="86400" vehsPerHour="150" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_right_motorbike" type="motorbike" route="r_duong_le_thanh_nghi_right" begin="0" end="86400" vehsPerHour="75" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_right_bicycle" type="bicycle" route="r_duong_le_thanh_nghi_right" begin="0" end="86400" vehsPerHour="45" departLane="best" departPos="base" departSpeed="desired" />
+  <flow id="f_r_duong_le_thanh_nghi_right_bus" type="bus" route="r_duong_le_thanh_nghi_right" begin="0" end="86400" vehsPerHour="30" departLane="best" departPos="base" departSpeed="desired" />
+</routes>

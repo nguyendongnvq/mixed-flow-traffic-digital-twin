@@ -1,0 +1,106 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling / test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and temp files
+*.log
+*.tmp
+tmp/
+.tmp/
+
+# IDE/editor files
+.vscode/
+.idea/
+.codex/
+.agents/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local datasets
+/datasets/**
+!/datasets/processed/
+!/datasets/processed/references/
+!/datasets/processed/references/detector_mapping.csv
+!/datasets/processed/references/sensor_node_mapping.csv
+!/datasets/raw/
+!/datasets/raw/sumo_data/
+!/datasets/raw/sumo_data/priority_tls_sensors_for_edges.csv
+
+# Generated model runs and archives
+/models/
+
+# DMFGCRN downloaded datasets and training runs
+/DMFGCRN/data/**
+!/DMFGCRN/data/**/
+!/DMFGCRN/data/**/*.py
+/DMFGCRN/experiments/**
+!/DMFGCRN/experiments/SUMO/
+!/DMFGCRN/experiments/SUMO/20260512041404/
+!/DMFGCRN/experiments/SUMO/20260512041404/10/
+!/DMFGCRN/experiments/SUMO/20260512041404/10/best_model.pth
+
+# Generated SUMO runtime files
+sumo/routes/*.traci_routes_only.*.rou.xml
+
+# Automatic config backups
+/configs/archive/
+
+# Local archives and generated documents
+/datasets.zip
+/DMFGCRN/DMFGCRN.rar
+/reports/
+/PLOS_ONE_TODO_Placeholder_Inventory_Full.xlsx
+/daily_traffic_density_profile.png
+/sumo/routes/*.traci_routes_only.rou.xml
+
+# Local run monitoring and continuation helpers
+/scripts/continue_v2_after_multiscale.ps1
+/scripts/monitor_multiscale_v2.ps1
+/scripts/train_evaluate_mixed_14d_when_ready.ps1
+
+# Superseded route and incomplete legacy SUMO scenarios (kept locally)
+/sumo/routes/named_roads.rou.xml
+/sumo/scenarios/named_roads_peak_hours.sumocfg
+/sumo/scenarios/named_roads_peak_hours_wide_coverage.sumocfg
+
+# Local audit report and superseded implementation plan
+/GITHUB_READINESS.md
+/DMFGCRN/process_custom_data_plan.md
+
+# Legacy exploratory notebooks (kept locally)
+/DatasetSetup.ipynb
+/LSTMEncoderAnomalyDetect.ipynb

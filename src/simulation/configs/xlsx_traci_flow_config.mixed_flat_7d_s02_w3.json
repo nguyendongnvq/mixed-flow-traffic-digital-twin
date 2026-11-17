@@ -1,0 +1,2325 @@
+{
+  "sumo": {
+    "sumocfg_path": "../../../sumo/scenarios/named_roads_updated.mixed_flat_7d_s02_w3.sumocfg",
+    "route_source_path": "../../../sumo/routes/named_roads_updated.rou.xml",
+    "runtime_route_path": "../../../sumo/routes/named_roads_updated.traci_routes_only.mixed_flat_7d_s02_w3.rou.xml",
+    "use_gui": false,
+    "step_length_seconds": 1.0,
+    "start_datetime_override": "2025-10-15 00:00:00",
+    "end_datetime_override": "2025-10-21 23:59:59",
+    "seed": 44,
+    "extra_sumo_args": [
+      "--no-internal-links",
+      "true",
+      "--no-warnings"
+    ]
+  },
+  "xlsx": {
+    "path": "../../../SUMO-Simulate.xlsx",
+    "sheet_name": "thiết lập khung thời gian",
+    "start_datetime_cell": "B1",
+    "end_datetime_cell": "B2",
+    "table": {
+      "start_row": 60,
+      "end_row": 200,
+      "date_col": "B",
+      "start_time_col": "C",
+      "end_time_col": "D",
+      "column_map": {
+        "two_lane_lane1": {
+          "xe_dap": {
+            "min": "G",
+            "max": "H"
+          },
+          "xe_may": {
+            "min": "I",
+            "max": "J"
+          },
+          "oto": {
+            "min": "K",
+            "max": "L"
+          },
+          "bus": {
+            "min": "M",
+            "max": "N"
+          },
+          "minibus": {
+            "min": "O",
+            "max": "P"
+          }
+        },
+        "two_lane_lane2": {
+          "xe_dap": {
+            "min": "Q",
+            "max": "R"
+          },
+          "xe_may": {
+            "min": "S",
+            "max": "T"
+          },
+          "oto": {
+            "min": "U",
+            "max": "V"
+          },
+          "bus": {
+            "min": "W",
+            "max": "X"
+          },
+          "minibus": {
+            "min": "Y",
+            "max": "Z"
+          }
+        },
+        "three_lane_lane1": {
+          "xe_dap": {
+            "min": "AA",
+            "max": "AB"
+          },
+          "xe_may": {
+            "min": "AC",
+            "max": "AD"
+          },
+          "oto": {
+            "min": "AE",
+            "max": "AF"
+          },
+          "bus": {
+            "min": "AG",
+            "max": "AH"
+          },
+          "minibus": {
+            "min": "AI",
+            "max": "AJ"
+          }
+        },
+        "three_lane_lane2": {
+          "xe_dap": {
+            "min": "AK",
+            "max": "AL"
+          },
+          "xe_may": {
+            "min": "AM",
+            "max": "AN"
+          },
+          "oto": {
+            "min": "AO",
+            "max": "AP"
+          },
+          "bus": {
+            "min": "AQ",
+            "max": "AR"
+          },
+          "minibus": {
+            "min": "AS",
+            "max": "AT"
+          }
+        },
+        "three_lane_lane3": {
+          "xe_dap": {
+            "min": "AU",
+            "max": "AV"
+          },
+          "xe_may": {
+            "min": "AW",
+            "max": "AX"
+          },
+          "oto": {
+            "min": "AY",
+            "max": "AZ"
+          },
+          "bus": {
+            "min": "BA",
+            "max": "BB"
+          },
+          "minibus": {
+            "min": "BC",
+            "max": "BD"
+          }
+        }
+      }
+    },
+    "calendar": {
+      "weekend_factor_cell": "B75",
+      "holiday_rows": [
+        {
+          "date_cell": "B76",
+          "factor_cell": "C76"
+        }
+      ]
+    }
+  },
+  "traffic": {
+    "rate_bound": "random",
+    "enable_30_thang_4_routes": false,
+    "vehicle_type_map": {
+      "xe_dap": "bicycle",
+      "xe_may": "motorbike",
+      "oto": "carFast",
+      "bus": "bus",
+      "minibus": "minibus"
+    },
+    "route_profiles": {
+      "two_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "two_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "three_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane3": {
+        "depart_lane": 2,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      }
+    },
+    "traffic_scale": 0.2,
+    "flow_mode": "constant_scaled"
+  },
+  "anomaly": {
+    "mode": "mixed",
+    "schedule": [
+      {
+        "id": "d15_s01_accident",
+        "step": 3600,
+        "kind": "accident",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s02_congestion_spike",
+        "step": 9000,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s03_zigzag",
+        "step": 14400,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s04_sudden_stop",
+        "step": 19800,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s05_accident",
+        "step": 25200,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s05_congestion_spike",
+        "step": 25200,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s06_accident",
+        "step": 30600,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s06_zigzag",
+        "step": 30600,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s07_accident",
+        "step": 36000,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s07_sudden_stop",
+        "step": 36000,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s08_congestion_spike",
+        "step": 41400,
+        "kind": "congestion_spike",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s08_zigzag",
+        "step": 41400,
+        "kind": "zigzag",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s09_congestion_spike",
+        "step": 46800,
+        "kind": "congestion_spike",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s09_sudden_stop",
+        "step": 46800,
+        "kind": "sudden_stop",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s10_zigzag",
+        "step": 52200,
+        "kind": "zigzag",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s10_sudden_stop",
+        "step": 52200,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s11_accident",
+        "step": 57600,
+        "kind": "accident",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s11_congestion_spike",
+        "step": 57600,
+        "kind": "congestion_spike",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s11_zigzag",
+        "step": 57600,
+        "kind": "zigzag",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s12_accident",
+        "step": 63000,
+        "kind": "accident",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s12_congestion_spike",
+        "step": 63000,
+        "kind": "congestion_spike",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s12_sudden_stop",
+        "step": 63000,
+        "kind": "sudden_stop",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s13_accident",
+        "step": 68400,
+        "kind": "accident",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s13_zigzag",
+        "step": 68400,
+        "kind": "zigzag",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s13_sudden_stop",
+        "step": 68400,
+        "kind": "sudden_stop",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s14_congestion_spike",
+        "step": 73800,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s14_zigzag",
+        "step": 73800,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s14_sudden_stop",
+        "step": 73800,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d15_s15_accident",
+        "step": 79200,
+        "kind": "accident",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d15_s15_congestion_spike",
+        "step": 79200,
+        "kind": "congestion_spike",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d15_s15_zigzag",
+        "step": 79200,
+        "kind": "zigzag",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d15_s15_sudden_stop",
+        "step": 79200,
+        "kind": "sudden_stop",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s01_accident",
+        "step": 90000,
+        "kind": "accident",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s02_congestion_spike",
+        "step": 95400,
+        "kind": "congestion_spike",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s03_zigzag",
+        "step": 100800,
+        "kind": "zigzag",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s04_sudden_stop",
+        "step": 106200,
+        "kind": "sudden_stop",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s05_accident",
+        "step": 111600,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s05_congestion_spike",
+        "step": 111600,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s06_accident",
+        "step": 117000,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s06_zigzag",
+        "step": 117000,
+        "kind": "zigzag",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s07_accident",
+        "step": 122400,
+        "kind": "accident",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s07_sudden_stop",
+        "step": 122400,
+        "kind": "sudden_stop",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s08_congestion_spike",
+        "step": 127800,
+        "kind": "congestion_spike",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s08_zigzag",
+        "step": 127800,
+        "kind": "zigzag",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s09_congestion_spike",
+        "step": 133200,
+        "kind": "congestion_spike",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s09_sudden_stop",
+        "step": 133200,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s10_zigzag",
+        "step": 138600,
+        "kind": "zigzag",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s10_sudden_stop",
+        "step": 138600,
+        "kind": "sudden_stop",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s11_accident",
+        "step": 144000,
+        "kind": "accident",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s11_congestion_spike",
+        "step": 144000,
+        "kind": "congestion_spike",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s11_zigzag",
+        "step": 144000,
+        "kind": "zigzag",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s12_accident",
+        "step": 149400,
+        "kind": "accident",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s12_congestion_spike",
+        "step": 149400,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s12_sudden_stop",
+        "step": 149400,
+        "kind": "sudden_stop",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s13_accident",
+        "step": 154800,
+        "kind": "accident",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s13_zigzag",
+        "step": 154800,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s13_sudden_stop",
+        "step": 154800,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s14_congestion_spike",
+        "step": 160200,
+        "kind": "congestion_spike",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s14_zigzag",
+        "step": 160200,
+        "kind": "zigzag",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s14_sudden_stop",
+        "step": 160200,
+        "kind": "sudden_stop",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d16_s15_accident",
+        "step": 165600,
+        "kind": "accident",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d16_s15_congestion_spike",
+        "step": 165600,
+        "kind": "congestion_spike",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d16_s15_zigzag",
+        "step": 165600,
+        "kind": "zigzag",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d16_s15_sudden_stop",
+        "step": 165600,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s01_accident",
+        "step": 176400,
+        "kind": "accident",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s02_congestion_spike",
+        "step": 181800,
+        "kind": "congestion_spike",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s03_zigzag",
+        "step": 187200,
+        "kind": "zigzag",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s04_sudden_stop",
+        "step": 192600,
+        "kind": "sudden_stop",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s05_accident",
+        "step": 198000,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s05_congestion_spike",
+        "step": 198000,
+        "kind": "congestion_spike",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s06_accident",
+        "step": 203400,
+        "kind": "accident",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s06_zigzag",
+        "step": 203400,
+        "kind": "zigzag",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s07_accident",
+        "step": 208800,
+        "kind": "accident",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s07_sudden_stop",
+        "step": 208800,
+        "kind": "sudden_stop",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s08_congestion_spike",
+        "step": 214200,
+        "kind": "congestion_spike",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s08_zigzag",
+        "step": 214200,
+        "kind": "zigzag",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s09_congestion_spike",
+        "step": 219600,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s09_sudden_stop",
+        "step": 219600,
+        "kind": "sudden_stop",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s10_zigzag",
+        "step": 225000,
+        "kind": "zigzag",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s10_sudden_stop",
+        "step": 225000,
+        "kind": "sudden_stop",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s11_accident",
+        "step": 230400,
+        "kind": "accident",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s11_congestion_spike",
+        "step": 230400,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s11_zigzag",
+        "step": 230400,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s12_accident",
+        "step": 235800,
+        "kind": "accident",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s12_congestion_spike",
+        "step": 235800,
+        "kind": "congestion_spike",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s12_sudden_stop",
+        "step": 235800,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s13_accident",
+        "step": 241200,
+        "kind": "accident",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s13_zigzag",
+        "step": 241200,
+        "kind": "zigzag",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s13_sudden_stop",
+        "step": 241200,
+        "kind": "sudden_stop",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s14_congestion_spike",
+        "step": 246600,
+        "kind": "congestion_spike",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s14_zigzag",
+        "step": 246600,
+        "kind": "zigzag",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s14_sudden_stop",
+        "step": 246600,
+        "kind": "sudden_stop",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d17_s15_accident",
+        "step": 252000,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d17_s15_congestion_spike",
+        "step": 252000,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d17_s15_zigzag",
+        "step": 252000,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d17_s15_sudden_stop",
+        "step": 252000,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s01_accident",
+        "step": 262800,
+        "kind": "accident",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s02_congestion_spike",
+        "step": 268200,
+        "kind": "congestion_spike",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s03_zigzag",
+        "step": 273600,
+        "kind": "zigzag",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s04_sudden_stop",
+        "step": 279000,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s05_accident",
+        "step": 284400,
+        "kind": "accident",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s05_congestion_spike",
+        "step": 284400,
+        "kind": "congestion_spike",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s06_accident",
+        "step": 289800,
+        "kind": "accident",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s06_zigzag",
+        "step": 289800,
+        "kind": "zigzag",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s07_accident",
+        "step": 295200,
+        "kind": "accident",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s07_sudden_stop",
+        "step": 295200,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s08_congestion_spike",
+        "step": 300600,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s08_zigzag",
+        "step": 300600,
+        "kind": "zigzag",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s09_congestion_spike",
+        "step": 306000,
+        "kind": "congestion_spike",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s09_sudden_stop",
+        "step": 306000,
+        "kind": "sudden_stop",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s10_zigzag",
+        "step": 311400,
+        "kind": "zigzag",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s10_sudden_stop",
+        "step": 311400,
+        "kind": "sudden_stop",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s11_accident",
+        "step": 316800,
+        "kind": "accident",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s11_congestion_spike",
+        "step": 316800,
+        "kind": "congestion_spike",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s11_zigzag",
+        "step": 316800,
+        "kind": "zigzag",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s12_accident",
+        "step": 322200,
+        "kind": "accident",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s12_congestion_spike",
+        "step": 322200,
+        "kind": "congestion_spike",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s12_sudden_stop",
+        "step": 322200,
+        "kind": "sudden_stop",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s13_accident",
+        "step": 327600,
+        "kind": "accident",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s13_zigzag",
+        "step": 327600,
+        "kind": "zigzag",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s13_sudden_stop",
+        "step": 327600,
+        "kind": "sudden_stop",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s14_congestion_spike",
+        "step": 333000,
+        "kind": "congestion_spike",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s14_zigzag",
+        "step": 333000,
+        "kind": "zigzag",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s14_sudden_stop",
+        "step": 333000,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d18_s15_accident",
+        "step": 338400,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d18_s15_congestion_spike",
+        "step": 338400,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d18_s15_zigzag",
+        "step": 338400,
+        "kind": "zigzag",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d18_s15_sudden_stop",
+        "step": 338400,
+        "kind": "sudden_stop",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s01_accident",
+        "step": 349200,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s02_congestion_spike",
+        "step": 354600,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s03_zigzag",
+        "step": 360000,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s04_sudden_stop",
+        "step": 365400,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s05_accident",
+        "step": 370800,
+        "kind": "accident",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s05_congestion_spike",
+        "step": 370800,
+        "kind": "congestion_spike",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s06_accident",
+        "step": 376200,
+        "kind": "accident",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s06_zigzag",
+        "step": 376200,
+        "kind": "zigzag",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s07_accident",
+        "step": 381600,
+        "kind": "accident",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s07_sudden_stop",
+        "step": 381600,
+        "kind": "sudden_stop",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s08_congestion_spike",
+        "step": 387000,
+        "kind": "congestion_spike",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s08_zigzag",
+        "step": 387000,
+        "kind": "zigzag",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s09_congestion_spike",
+        "step": 392400,
+        "kind": "congestion_spike",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s09_sudden_stop",
+        "step": 392400,
+        "kind": "sudden_stop",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s10_zigzag",
+        "step": 397800,
+        "kind": "zigzag",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s10_sudden_stop",
+        "step": 397800,
+        "kind": "sudden_stop",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s11_accident",
+        "step": 403200,
+        "kind": "accident",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s11_congestion_spike",
+        "step": 403200,
+        "kind": "congestion_spike",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s11_zigzag",
+        "step": 403200,
+        "kind": "zigzag",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s12_accident",
+        "step": 408600,
+        "kind": "accident",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s12_congestion_spike",
+        "step": 408600,
+        "kind": "congestion_spike",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s12_sudden_stop",
+        "step": 408600,
+        "kind": "sudden_stop",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s13_accident",
+        "step": 414000,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s13_zigzag",
+        "step": 414000,
+        "kind": "zigzag",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s13_sudden_stop",
+        "step": 414000,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s14_congestion_spike",
+        "step": 419400,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s14_zigzag",
+        "step": 419400,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s14_sudden_stop",
+        "step": 419400,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d19_s15_accident",
+        "step": 424800,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d19_s15_congestion_spike",
+        "step": 424800,
+        "kind": "congestion_spike",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d19_s15_zigzag",
+        "step": 424800,
+        "kind": "zigzag",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d19_s15_sudden_stop",
+        "step": 424800,
+        "kind": "sudden_stop",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s01_accident",
+        "step": 435600,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s02_congestion_spike",
+        "step": 441000,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s03_zigzag",
+        "step": 446400,
+        "kind": "zigzag",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s04_sudden_stop",
+        "step": 451800,
+        "kind": "sudden_stop",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s05_accident",
+        "step": 457200,
+        "kind": "accident",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s05_congestion_spike",
+        "step": 457200,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s06_accident",
+        "step": 462600,
+        "kind": "accident",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s06_zigzag",
+        "step": 462600,
+        "kind": "zigzag",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s07_accident",
+        "step": 468000,
+        "kind": "accident",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s07_sudden_stop",
+        "step": 468000,
+        "kind": "sudden_stop",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s08_congestion_spike",
+        "step": 473400,
+        "kind": "congestion_spike",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s08_zigzag",
+        "step": 473400,
+        "kind": "zigzag",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s09_congestion_spike",
+        "step": 478800,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s09_sudden_stop",
+        "step": 478800,
+        "kind": "sudden_stop",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s10_zigzag",
+        "step": 484200,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s10_sudden_stop",
+        "step": 484200,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s11_accident",
+        "step": 489600,
+        "kind": "accident",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s11_congestion_spike",
+        "step": 489600,
+        "kind": "congestion_spike",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s11_zigzag",
+        "step": 489600,
+        "kind": "zigzag",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s12_accident",
+        "step": 495000,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s12_congestion_spike",
+        "step": 495000,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s12_sudden_stop",
+        "step": 495000,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s13_accident",
+        "step": 500400,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s13_zigzag",
+        "step": 500400,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s13_sudden_stop",
+        "step": 500400,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s14_congestion_spike",
+        "step": 505800,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s14_zigzag",
+        "step": 505800,
+        "kind": "zigzag",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s14_sudden_stop",
+        "step": 505800,
+        "kind": "sudden_stop",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d20_s15_accident",
+        "step": 511200,
+        "kind": "accident",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d20_s15_congestion_spike",
+        "step": 511200,
+        "kind": "congestion_spike",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d20_s15_zigzag",
+        "step": 511200,
+        "kind": "zigzag",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d20_s15_sudden_stop",
+        "step": 511200,
+        "kind": "sudden_stop",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s01_accident",
+        "step": 522000,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s02_congestion_spike",
+        "step": 527400,
+        "kind": "congestion_spike",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s03_zigzag",
+        "step": 532800,
+        "kind": "zigzag",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s04_sudden_stop",
+        "step": 538200,
+        "kind": "sudden_stop",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s05_accident",
+        "step": 543600,
+        "kind": "accident",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s05_congestion_spike",
+        "step": 543600,
+        "kind": "congestion_spike",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s06_accident",
+        "step": 549000,
+        "kind": "accident",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s06_zigzag",
+        "step": 549000,
+        "kind": "zigzag",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s07_accident",
+        "step": 554400,
+        "kind": "accident",
+        "edge_id": "-295408469#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s07_sudden_stop",
+        "step": 554400,
+        "kind": "sudden_stop",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s08_congestion_spike",
+        "step": 559800,
+        "kind": "congestion_spike",
+        "edge_id": "693841066#9",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s08_zigzag",
+        "step": 559800,
+        "kind": "zigzag",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s09_congestion_spike",
+        "step": 565200,
+        "kind": "congestion_spike",
+        "edge_id": "694320789#1",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s09_sudden_stop",
+        "step": 565200,
+        "kind": "sudden_stop",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s10_zigzag",
+        "step": 570600,
+        "kind": "zigzag",
+        "edge_id": "-302756231#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s10_sudden_stop",
+        "step": 570600,
+        "kind": "sudden_stop",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s11_accident",
+        "step": 576000,
+        "kind": "accident",
+        "edge_id": "-695509454#0",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s11_congestion_spike",
+        "step": 576000,
+        "kind": "congestion_spike",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s11_zigzag",
+        "step": 576000,
+        "kind": "zigzag",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s12_accident",
+        "step": 581400,
+        "kind": "accident",
+        "edge_id": "295853897#4",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s12_congestion_spike",
+        "step": 581400,
+        "kind": "congestion_spike",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s12_sudden_stop",
+        "step": 581400,
+        "kind": "sudden_stop",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s13_accident",
+        "step": 586800,
+        "kind": "accident",
+        "edge_id": "295408469#2",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s13_zigzag",
+        "step": 586800,
+        "kind": "zigzag",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s13_sudden_stop",
+        "step": 586800,
+        "kind": "sudden_stop",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s14_congestion_spike",
+        "step": 592200,
+        "kind": "congestion_spike",
+        "edge_id": "-693841066#11",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s14_zigzag",
+        "step": 592200,
+        "kind": "zigzag",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s14_sudden_stop",
+        "step": 592200,
+        "kind": "sudden_stop",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 900
+        }
+      },
+      {
+        "id": "d21_s15_accident",
+        "step": 597600,
+        "kind": "accident",
+        "edge_id": "695838779#1",
+        "params": {
+          "duration_steps": 1800
+        }
+      },
+      {
+        "id": "d21_s15_congestion_spike",
+        "step": 597600,
+        "kind": "congestion_spike",
+        "edge_id": "295853900#15",
+        "params": {
+          "duration_steps": 1200
+        }
+      },
+      {
+        "id": "d21_s15_zigzag",
+        "step": 597600,
+        "kind": "zigzag",
+        "edge_id": "295408469#11",
+        "params": {
+          "duration_steps": 300
+        }
+      },
+      {
+        "id": "d21_s15_sudden_stop",
+        "step": 597600,
+        "kind": "sudden_stop",
+        "edge_id": "-295853897#5",
+        "params": {
+          "duration_steps": 900
+        }
+      }
+    ],
+    "label": {
+      "step_output_path": "../../../datasets/raw/sumo_data/anomaly_step_labels_mixed_flat_7d_s02_w3.csv",
+      "window_output_path": "../../../datasets/raw/sumo_data/anomaly_window_labels_mixed_flat_7d_s02_w3.csv",
+      "spawn_output_path": "../../../datasets/raw/sumo_data/anomaly_spawn_records_mixed_flat_7d_s02_w3.json",
+      "window_sec": 300
+    }
+  }
+}

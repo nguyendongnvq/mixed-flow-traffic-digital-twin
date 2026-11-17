@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+  <input>
+    <net-file value="../network/9nut.net.xml" />
+    <route-files value="../routes/named_roads_updated.rou.xml" />
+    <additional-files value="priority_tls.mixed_flat_7d_s02_w2.add.xml" />
+  </input>
+  <time>
+    <begin value="0" />
+    <end value="604800" />
+    <step-length value="1" />
+  </time>
+  <processing>
+    <lateral-resolution value="0.7" />
+    <collision.action value="warn" />
+    <collision.check-junctions value="true" />
+  </processing>
+  <report>
+    <duration-log.statistics value="true" />
+    <no-step-log value="true" />
+    <verbose value="false" />
+  </report>
+</configuration>

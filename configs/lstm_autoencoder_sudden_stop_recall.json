@@ -1,0 +1,42 @@
+{
+  "normal_dataset": "datasets\\processed\\normal\\forecast_baseline_node_level_normal_only.csv",
+  "accident_dataset": "datasets\\processed\\sudden_stop\\forecast_sudden_stop_node_level_sudden_stop_only.csv",
+  "time_col": "begin",
+  "end_col": "end",
+  "node_col": "node_id",
+  "label_col": "is_anomaly",
+  "feature_cols": [
+    "flow_count_5m",
+    "speed",
+    "speed_missing",
+    "e1_occupancy",
+    "e2_meanOccupancy",
+    "jam_veh"
+  ],
+  "seq_size": 6,
+  "batch_size": 64,
+  "hidden_dim": 128,
+  "latent_dim": 64,
+  "num_layers": 1,
+  "dropout": 0.1,
+  "epochs": 80,
+  "lr": 0.001,
+  "patience": 12,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "score_name": "weighted_node_max",
+  "threshold_percentile": 60,
+  "min_consecutive": 1,
+  "cooldown_steps": 0,
+  "feature_weights": {
+    "flow_count_5m": 0.3,
+    "speed": 0.3,
+    "speed_missing": 0.1,
+    "e1_occupancy": 0.3,
+    "e2_meanOccupancy": 2.5,
+    "jam_veh": 1.5
+  },
+  "output_dir": "models/outputs_weighted_recall_sudden_stop",
+  "model_output_name": "lstm_autoencoder_weighted_node_max_recall_sudden_stop.pt",
+  "seed": 42
+}

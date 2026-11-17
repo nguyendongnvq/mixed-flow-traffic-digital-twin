@@ -1,0 +1,53 @@
+{
+  "model_backend": "dmfgcrn",
+  "normal_dataset": "datasets\\processed\\zigzag\\forecast_zigzag_node_level_normal_only.csv",
+  "accident_dataset": "datasets\\processed\\zigzag\\forecast_zigzag_node_level_zigzag_only.csv",
+  "time_col": "begin",
+  "end_col": "end",
+  "node_col": "node_id",
+  "label_col": "is_anomaly",
+  "feature_cols": [
+    "flow_count_5m",
+    "speed",
+    "speed_missing",
+    "e1_occupancy",
+    "e2_meanOccupancy",
+    "jam_veh"
+  ],
+  "seq_size": 12,
+  "batch_size": 64,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "score_name": "weighted_node_max",
+  "threshold_percentile": 83,
+  "min_consecutive": 1,
+  "cooldown_steps": 0,
+  "feature_weights": {
+    "flow_count_5m": 0.018426,
+    "speed": 0.060009,
+    "speed_missing": 0.044889,
+    "e1_occupancy": 0.114441,
+    "e2_meanOccupancy": 0.759359,
+    "jam_veh": 0.002875
+  },
+  "output_dir": "models/outputs_dmfgcrn_weighted_p80_zigzag",
+  "model_output_name": "dmfgcrn_weighted_node_max_p80_zigzag.pt",
+  "dmfgcrn_checkpoint_path": "DMFGCRN\\experiments\\SUMO\\20260512041404\\10\\best_model.pth",
+  "dmfgcrn_conf_path": "DMFGCRN\\config_file\\SUMO_DMFGCRN.conf",
+  "dmfgcrn_device": "cpu",
+  "dmfgcrn_horizon_index": 7,
+  "dmfgcrn_input_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed",
+    "speed_missing"
+  ],
+  "dmfgcrn_output_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed"
+  ],
+  "dmfgcrn_steps_per_day": 288,
+  "seed": 42,
+  "event_gap_seconds": null
+}

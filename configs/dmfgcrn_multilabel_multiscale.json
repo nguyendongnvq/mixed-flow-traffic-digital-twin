@@ -1,0 +1,111 @@
+{
+  "dataset_output": "datasets/processed/multilabel/dmfgcrn_multilabel_windows_multiscale_v2.npz",
+  "feature_cols": [
+    "flow_count_5m",
+    "speed",
+    "speed_missing",
+    "e1_occupancy",
+    "e2_meanOccupancy",
+    "jam_veh"
+  ],
+  "input_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed",
+    "speed_missing"
+  ],
+  "output_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed"
+  ],
+  "nodes": [
+    "30_4_htp_lane_N",
+    "30_4_htp_lane_S",
+    "30_4_lnh_lane_N",
+    "30_4_lnh_lane_S",
+    "30_4_ltn_lane_N",
+    "30_4_ltn_lane_S",
+    "pdl_htp_lane_E",
+    "pdl_htp_lane_N",
+    "pdl_htp_lane_S",
+    "pdl_htp_lane_W",
+    "pdl_lnh_lane_E",
+    "pdl_lnh_lane_N",
+    "pdl_lnh_lane_S",
+    "pdl_lnh_lane_W",
+    "pdl_ltn_lane_E",
+    "pdl_ltn_lane_N",
+    "pdl_ltn_lane_S",
+    "pdl_ltn_lane_W",
+    "xoviet_htp_lane_E",
+    "xoviet_htp_lane_N",
+    "xoviet_htp_lane_S",
+    "xoviet_htp_lane_W",
+    "xoviet_lnh_lane_E",
+    "xoviet_lnh_lane_N",
+    "xoviet_lnh_lane_S",
+    "xoviet_lnh_lane_W",
+    "xoviet_ltn_lane_E",
+    "xoviet_ltn_lane_N",
+    "xoviet_ltn_lane_S",
+    "xoviet_ltn_lane_W"
+  ],
+  "sources": [
+    {
+      "name": "normal",
+      "path": "datasets/processed/normal/forecast_baseline_node_level_normal_only.csv",
+      "class_name": null,
+      "traffic_scale": 1.0
+    },
+    {
+      "name": "accident",
+      "path": "datasets/processed/accident/forecast_accident_node_level_accident_only.csv",
+      "class_name": "accident",
+      "traffic_scale": 1.0
+    },
+    {
+      "name": "congestion_spike",
+      "path": "datasets/processed/congestion/forecast_congestion_spike_node_level_congestion_spike_only.csv",
+      "class_name": "congestion_spike",
+      "traffic_scale": 1.0
+    },
+    {
+      "name": "zigzag",
+      "path": "datasets/processed/zigzag/forecast_zigzag_node_level_zigzag_only.csv",
+      "class_name": "zigzag",
+      "traffic_scale": 1.0
+    },
+    {
+      "name": "sudden_stop",
+      "path": "datasets/processed/sudden_stop/forecast_sudden_stop_node_level_sudden_stop_only.csv",
+      "class_name": "sudden_stop",
+      "traffic_scale": 1.0
+    },
+    {
+      "name": "mixed_s02",
+      "path": "datasets/processed/mixed/forecast_mixed_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.2
+    },
+    {
+      "name": "mixed_s06",
+      "path": "datasets/processed/mixed_s06/forecast_mixed_s06_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.6
+    },
+    {
+      "name": "mixed_s10",
+      "path": "datasets/processed/mixed_s10/forecast_mixed_s10_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 1.0
+    }
+  ],
+  "lag": 12,
+  "steps_per_day": 288,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15
+}

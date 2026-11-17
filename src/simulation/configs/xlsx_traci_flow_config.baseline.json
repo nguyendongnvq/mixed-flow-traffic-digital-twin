@@ -1,0 +1,305 @@
+{
+  "sumo": {
+    "sumocfg_path": "../../../sumo/scenarios/named_roads_updated.baseline.sumocfg",
+    "route_source_path": "../../../sumo/routes/named_roads_updated.rou.xml",
+    "runtime_route_path": "../../../sumo/routes/named_roads_updated.traci_routes_only.baseline.rou.xml",
+    "use_gui": true,
+    "step_length_seconds": 1.0,
+    "start_datetime_override": null,
+    "end_datetime_override": null,
+    "seed": 42,
+    "extra_sumo_args": [
+      "--no-internal-links",
+      "true",
+      "--no-warnings"
+    ]
+  },
+  "xlsx": {
+    "path": "../../../SUMO-Simulate.xlsx",
+    "sheet_name": "thiết lập khung thời gian",
+    "start_datetime_cell": "B1",
+    "end_datetime_cell": "B2",
+    "table": {
+      "start_row": 60,
+      "end_row": 200,
+      "date_col": "B",
+      "start_time_col": "C",
+      "end_time_col": "D",
+      "column_map": {
+        "two_lane_lane1": {
+          "xe_dap": {
+            "min": "G",
+            "max": "H"
+          },
+          "xe_may": {
+            "min": "I",
+            "max": "J"
+          },
+          "oto": {
+            "min": "K",
+            "max": "L"
+          },
+          "bus": {
+            "min": "M",
+            "max": "N"
+          },
+          "minibus": {
+            "min": "O",
+            "max": "P"
+          }
+        },
+        "two_lane_lane2": {
+          "xe_dap": {
+            "min": "Q",
+            "max": "R"
+          },
+          "xe_may": {
+            "min": "S",
+            "max": "T"
+          },
+          "oto": {
+            "min": "U",
+            "max": "V"
+          },
+          "bus": {
+            "min": "W",
+            "max": "X"
+          },
+          "minibus": {
+            "min": "Y",
+            "max": "Z"
+          }
+        },
+        "three_lane_lane1": {
+          "xe_dap": {
+            "min": "AA",
+            "max": "AB"
+          },
+          "xe_may": {
+            "min": "AC",
+            "max": "AD"
+          },
+          "oto": {
+            "min": "AE",
+            "max": "AF"
+          },
+          "bus": {
+            "min": "AG",
+            "max": "AH"
+          },
+          "minibus": {
+            "min": "AI",
+            "max": "AJ"
+          }
+        },
+        "three_lane_lane2": {
+          "xe_dap": {
+            "min": "AK",
+            "max": "AL"
+          },
+          "xe_may": {
+            "min": "AM",
+            "max": "AN"
+          },
+          "oto": {
+            "min": "AO",
+            "max": "AP"
+          },
+          "bus": {
+            "min": "AQ",
+            "max": "AR"
+          },
+          "minibus": {
+            "min": "AS",
+            "max": "AT"
+          }
+        },
+        "three_lane_lane3": {
+          "xe_dap": {
+            "min": "AU",
+            "max": "AV"
+          },
+          "xe_may": {
+            "min": "AW",
+            "max": "AX"
+          },
+          "oto": {
+            "min": "AY",
+            "max": "AZ"
+          },
+          "bus": {
+            "min": "BA",
+            "max": "BB"
+          },
+          "minibus": {
+            "min": "BC",
+            "max": "BD"
+          }
+        }
+      }
+    },
+    "calendar": {
+      "weekend_factor_cell": "B75",
+      "holiday_rows": [
+        {
+          "date_cell": "B76",
+          "factor_cell": "C76"
+        }
+      ]
+    }
+  },
+  "traffic": {
+    "rate_bound": "random",
+    "enable_30_thang_4_routes": false,
+    "vehicle_type_map": {
+      "xe_dap": "bicycle",
+      "xe_may": "motorbike",
+      "oto": "carFast",
+      "bus": "bus",
+      "minibus": "minibus"
+    },
+    "route_profiles": {
+      "two_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "two_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_phan_dang_luu_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_phan_dang_luu_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_right",
+            "weight": 0.1
+          },
+          {
+            "id": "r_duong_le_thanh_nghi_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_huynh_tan_phat_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_left",
+            "weight": 0.1,
+            "depart_lane": "best"
+          },
+          {
+            "id": "r_duong_luong_nhu_hoc_right",
+            "weight": 0.1,
+            "depart_lane": "best"
+          }
+        ]
+      },
+      "three_lane_lane1": {
+        "depart_lane": 0,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane2": {
+        "depart_lane": 1,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      },
+      "three_lane_lane3": {
+        "depart_lane": 2,
+        "routes": [
+          {
+            "id": "r_duong_30_thang_4_left",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_30_thang_4_right",
+            "weight": 0.15
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_left",
+            "weight": 0.2
+          },
+          {
+            "id": "r_duong_xo_viet_nghe_tinh_right",
+            "weight": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "anomaly": {
+    "mode": "baseline",
+    "schedule": [],
+    "label": {
+      "step_output_path": "../../../sumo/scenarios/anomaly_step_labels_baseline.csv",
+      "window_output_path": "../../../sumo/scenarios/anomaly_window_labels_baseline.csv",
+      "window_sec": 300
+    }
+  }
+}

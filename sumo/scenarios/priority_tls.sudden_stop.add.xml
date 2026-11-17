@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='utf-8'?>
+<additional>
+  <tlLogic id="1333246155" type="static" programID="prio60" offset="0">
+    <phase duration="33" state="rrrrGGGggrrrrGGGgg" />
+    <phase duration="3" state="rrrryyyyyrrrryyyyy" />
+    <phase duration="21" state="GGggrrrrrGGggrrrrr" />
+    <phase duration="3" state="yyyyrrrrryyyyrrrrr" />
+  </tlLogic>
+  <tlLogic id="1333258672" type="static" programID="prio60" offset="0">
+    <phase duration="33" state="GGGggrrrrGGGggrrrr" />
+    <phase duration="3" state="yyyyyrrrryyyyyrrrr" />
+    <phase duration="21" state="rrrrrGGggrrrrrGGgg" />
+    <phase duration="3" state="rrrrryyyyrrrrryyyy" />
+  </tlLogic>
+  <tlLogic id="1333258675" type="static" programID="prio60" offset="0">
+    <phase duration="52" state="G" />
+    <phase duration="3" state="y" />
+    <phase duration="5" state="r" />
+  </tlLogic>
+  <tlLogic id="1333258678" type="static" programID="prio60" offset="0">
+    <phase duration="21" state="rrrrrGGGggrrrrrGGGgg" />
+    <phase duration="3" state="rrrrryyyyyrrrrryyyyy" />
+    <phase duration="33" state="GGGggrrrrrGGGggrrrrr" />
+    <phase duration="3" state="yyyyyrrrrryyyyyrrrrr" />
+  </tlLogic>
+  <tlLogic id="2991183839" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="2991183840" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="3070269458" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GG" />
+    <phase duration="3" state="yy" />
+    <phase duration="4" state="rr" />
+  </tlLogic>
+  <tlLogic id="3070269459" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GG" />
+    <phase duration="3" state="yy" />
+    <phase duration="4" state="rr" />
+  </tlLogic>
+  <tlLogic id="3070269464" type="static" programID="prio60" offset="0">
+    <phase duration="52" state="GGGG" />
+    <phase duration="3" state="yyyy" />
+    <phase duration="5" state="rrrr" />
+  </tlLogic>
+  <tlLogic id="6514317640" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGGG" />
+    <phase duration="3" state="yyyy" />
+    <phase duration="4" state="rrrr" />
+  </tlLogic>
+  <tlLogic id="6521491130" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6521491131" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6521491133" type="static" programID="prio60" offset="0">
+    <phase duration="52" state="GGGG" />
+    <phase duration="3" state="yyyy" />
+    <phase duration="5" state="rrrr" />
+  </tlLogic>
+  <tlLogic id="6524195367" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6524195368" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6524195369" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6524195370" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6524195371" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6524195372" type="static" programID="prio60" offset="0">
+    <phase duration="53" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="4" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6539578577" type="static" programID="prio60" offset="0">
+    <phase duration="52" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="5" state="rrr" />
+  </tlLogic>
+  <tlLogic id="6539578578" type="static" programID="prio60" offset="0">
+    <phase duration="52" state="GGG" />
+    <phase duration="3" state="yyy" />
+    <phase duration="5" state="rrr" />
+  </tlLogic>
+  <tlLogic id="cluster1333246054_3070300073" type="static" programID="prio60" offset="0">
+    <phase duration="33" state="GGGGgrrrrGGGGgrrrr" />
+    <phase duration="3" state="yyyyyrrrryyyyyrrrr" />
+    <phase duration="21" state="rrrrrGGggrrrrrGGgg" />
+    <phase duration="3" state="rrrrryyyyrrrrryyyy" />
+  </tlLogic>
+  <tlLogic id="cluster1333246087_3078041918" type="static" programID="prio60" offset="0">
+    <phase duration="33" state="GGGGgrrrrrGGGGgrrrrr" />
+    <phase duration="3" state="yyyyyrrrrryyyyyrrrrr" />
+    <phase duration="21" state="rrrrrGGGggrrrrrGGGgg" />
+    <phase duration="3" state="rrrrryyyyyrrrrryyyyy" />
+  </tlLogic>
+  <tlLogic id="cluster3070300084_3070300086" type="static" programID="prio60" offset="0">
+    <phase duration="33" state="GGGGgrrrrGGGGgrrrr" />
+    <phase duration="3" state="yyyyyrrrryyyyyrrrr" />
+    <phase duration="21" state="rrrrrGGggrrrrrGGgg" />
+    <phase duration="3" state="rrrrryyyyrrrrryyyy" />
+  </tlLogic>
+  <laneAreaDetector id="30_4_lnh_lane_2_W" lanes="295408479#0_2 295408479#1_2 295408479#2_2" pos="16" endPos="10" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_1_W" lanes="295408479#0_1 295408479#1_1 295408479#2_1" pos="16" endPos="10" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_0_W" lanes="295408479#0_0 295408479#1_0 295408479#2_0" pos="16" endPos="10" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_2_E" lanes="295853890#1_2 295853890#2_2" pos="87" endPos="49" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_1_E" lanes="295853890#1_1 295853890#2_1" pos="87" endPos="49" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_0_E" lanes="295853890#1_0 295853890#2_0" pos="87" endPos="49" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_0_N" lanes="-295853900#0_0" pos="8" endPos="58" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_lnh_lane_0_S" lanes="118555834#1_0 118555834#2_0" pos="32" endPos="44" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_2_W" lanes="295853892#1_2 295853892#2_2" pos="65" endPos="25" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_1_W" lanes="295853892#1_1 295853892#2_1" pos="65" endPos="25" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_0_W" lanes="295853892#1_0 295853892#2_0" pos="65" endPos="25" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_2_E" lanes="295853894#1_2 295853894#2_2" pos="68" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_1_E" lanes="295853894#1_1 295853894#2_1" pos="68" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_0_E" lanes="295853894#1_0 295853894#2_0" pos="68" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_0_N" lanes="255678822#1_0" pos="0" endPos="48" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_htp_lane_0_S" lanes="-295853897#0_0" pos="9" endPos="59" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_2_W" lanes="295853891#1_2 295853891#2_2" pos="136" endPos="41" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_1_W" lanes="295853891#1_1 295853891#2_1" pos="136" endPos="41" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_0_W" lanes="295853891#1_0 295853891#2_0" pos="136" endPos="41" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_2_E" lanes="295408481#2_2" pos="122" endPos="172" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_1_E" lanes="295408481#2_1" pos="122" endPos="172" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_0_E" lanes="295408481#2_0" pos="122" endPos="172" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_1_N" lanes="295408456#1_1" pos="0" endPos="48" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_0_N" lanes="295408456#1_0" pos="0" endPos="48" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_1_S" lanes="-693841066#0_1" pos="12" endPos="62" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="30_4_ltn_lane_0_S" lanes="-693841066#0_0" pos="12" endPos="62" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_1_W" lanes="295408469#2_1" pos="36" endPos="86" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_0_W" lanes="295408469#2_0" pos="36" endPos="86" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_1_E" lanes="-295408469#5_1" pos="52" endPos="102" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_0_E" lanes="-295408469#5_0" pos="52" endPos="102" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_0_N" lanes="295853900#7_0 295853900#8_0" pos="0" endPos="4" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_lnh_lane_0_S" lanes="-295853900#10_0 -295853900#9_0" pos="0" endPos="5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_1_W" lanes="295408469#6_1" pos="100" endPos="150" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_0_W" lanes="295408469#6_0" pos="100" endPos="150" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_1_E" lanes="-295408469#7_1" pos="66" endPos="116" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_0_E" lanes="-295408469#7_0" pos="66" endPos="116" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_0_N" lanes="295853897#3_0 295853897#4_0" pos="0" endPos="18" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_htp_lane_0_S" lanes="-295853897#6_0 -295853897#5_0" pos="134" endPos="38" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_1_W" lanes="295408469#9_1 295408469#10_1 295408469#11_1" pos="26.35" endPos="39.25" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_0_W" lanes="295408469#9_0 295408469#10_0 295408469#11_0" pos="26.35" endPos="39.25" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_1_E" lanes="-695509454#0_1" pos="0" endPos="47.81" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_0_E" lanes="-695509454#0_0" pos="0" endPos="47.81" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_1_N" lanes="693841066#3_1" pos="24.5" endPos="74.5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_0_N" lanes="693841066#3_0" pos="24.5" endPos="74.5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_1_S" lanes="-693841066#4_1" pos="52" endPos="102" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="pdl_ltn_lane_0_S" lanes="-693841066#4_0" pos="52" endPos="102" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_2_W" lanes="694314742#0_2 694314742#1_2" pos="15" endPos="7" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_1_W" lanes="694314742#0_1 694314742#1_1" pos="15" endPos="7" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_0_W" lanes="694314742#0_0 694314742#1_0" pos="15" endPos="7" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_2_E" lanes="1281556686#1_2 1281556686#2_2" pos="22" endPos="5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_1_E" lanes="1281556686#1_1 1281556686#2_1" pos="22" endPos="5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_0_E" lanes="1281556686#1_0 1281556686#2_0" pos="22" endPos="5" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_0_N" lanes="295853900#15_0" pos="7" endPos="57" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_lnh_lane_0_S" lanes="-302756231#1_0" pos="17" endPos="67" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_2_W" lanes="694320789#0_2 694320789#1_2" pos="32" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_1_W" lanes="694320789#0_1 694320789#1_1" pos="32" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_0_W" lanes="694320789#0_0 694320789#1_0" pos="32" endPos="12" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_2_E" lanes="695838780#1_2 695838779#1_2" pos="55.19" endPos="9.73" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_1_E" lanes="695838780#1_1 695838779#1_1" pos="55.19" endPos="9.73" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_0_E" lanes="695838780#1_0 695838779#1_0" pos="55.19" endPos="9.73" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_0_N" lanes="295853897#7_0 295853897#8_0 295853897#9_0" pos="122.28" endPos="18.31" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_htp_lane_0_S" lanes="-295853897#12_0 -295853897#11_0" pos="5.24" endPos="34.24" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_2_W" lanes="302756236#1_2 302756236#2_2" pos="58.93" endPos="5.38" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_1_W" lanes="302756236#1_1 302756236#2_1" pos="58.93" endPos="5.38" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_0_W" lanes="302756236#1_0 302756236#2_0" pos="58.93" endPos="5.38" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_2_E" lanes="695838784#0_2 695838784#1_2" pos="150" endPos="11" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_1_E" lanes="695838784#0_1 695838784#1_1" pos="150" endPos="11" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_0_E" lanes="695838784#0_0 695838784#1_0" pos="150" endPos="11" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_1_N" lanes="693841066#6_1 693841066#7_1 693841066#8_1 693841066#9_1" pos="117" endPos="7" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_0_N" lanes="693841066#6_0 693841066#7_0 693841066#8_0 693841066#9_0" pos="117" endPos="7" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_1_S" lanes="-693841066#13_1 -693841066#12_1 -693841066#11_1" pos="9.87" endPos="8.22" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <laneAreaDetector id="xoviet_ltn_lane_0_S" lanes="-693841066#13_0 -693841066#12_0 -693841066#11_0" pos="9.87" endPos="8.22" period="300" file="../../datasets/raw/sumo_data/detectors/lanearea_output_sudden_stop.xml" friendlyPos="0" friendlyLength="50" />
+  <inductionLoop id="30_4_lnh_lane_2_W_loop" lane="295408479#2_2" pos="9" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_1_W_loop" lane="295408479#2_1" pos="9" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_0_W_loop" lane="295408479#2_0" pos="9" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_2_E_loop" lane="295853890#2_2" pos="48" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_1_E_loop" lane="295853890#2_1" pos="48" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_0_E_loop" lane="295853890#2_0" pos="48" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_0_N_loop" lane="-295853900#0_0" pos="57" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_lnh_lane_0_S_loop" lane="118555834#2_0" pos="43" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_2_W_loop" lane="295853892#2_2" pos="24" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_1_W_loop" lane="295853892#2_1" pos="24" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_0_W_loop" lane="295853892#2_0" pos="24" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_2_E_loop" lane="295853894#2_2" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_1_E_loop" lane="295853894#2_1" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_0_E_loop" lane="295853894#2_0" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_0_N_loop" lane="255678822#1_0" pos="47" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_htp_lane_0_S_loop" lane="-295853897#0_0" pos="58" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_2_W_loop" lane="295853891#2_2" pos="40" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_1_W_loop" lane="295853891#2_1" pos="40" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_0_W_loop" lane="295853891#2_0" pos="40" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_2_E_loop" lane="295408481#2_2" pos="171" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_1_E_loop" lane="295408481#2_1" pos="171" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_0_E_loop" lane="295408481#2_0" pos="171" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_1_N_loop" lane="295408456#1_1" pos="47" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_0_N_loop" lane="295408456#1_0" pos="47" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_1_S_loop" lane="-693841066#0_1" pos="61" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="30_4_ltn_lane_0_S_loop" lane="-693841066#0_0" pos="61" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_1_W_loop" lane="295408469#2_1" pos="85" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_0_W_loop" lane="295408469#2_0" pos="85" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_1_E_loop" lane="-295408469#5_1" pos="101" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_0_E_loop" lane="-295408469#5_0" pos="101" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_0_N_loop" lane="295853900#8_0" pos="3" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_lnh_lane_0_S_loop" lane="-295853900#9_0" pos="4" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_1_W_loop" lane="295408469#6_1" pos="149" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_0_W_loop" lane="295408469#6_0" pos="149" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_1_E_loop" lane="-295408469#7_1" pos="115" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_0_E_loop" lane="-295408469#7_0" pos="115" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_0_N_loop" lane="295853897#4_0" pos="17" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_htp_lane_0_S_loop" lane="-295853897#5_0" pos="37" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_1_W_loop" lane="295408469#11_1" pos="38.25" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_0_W_loop" lane="295408469#11_0" pos="38.25" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_1_E_loop" lane="-695509454#0_1" pos="46.81" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_0_E_loop" lane="-695509454#0_0" pos="46.81" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_1_N_loop" lane="693841066#3_1" pos="73.5" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_0_N_loop" lane="693841066#3_0" pos="73.5" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_1_S_loop" lane="-693841066#4_1" pos="101" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="pdl_ltn_lane_0_S_loop" lane="-693841066#4_0" pos="101" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_2_W_loop" lane="694314742#1_2" pos="6" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_1_W_loop" lane="694314742#1_1" pos="6" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_0_W_loop" lane="694314742#1_0" pos="6" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_2_E_loop" lane="1281556686#2_2" pos="4" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_1_E_loop" lane="1281556686#2_1" pos="4" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_0_E_loop" lane="1281556686#2_0" pos="4" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_0_N_loop" lane="295853900#15_0" pos="56" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_lnh_lane_0_S_loop" lane="-302756231#1_0" pos="66" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_2_W_loop" lane="694320789#1_2" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_1_W_loop" lane="694320789#1_1" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_0_W_loop" lane="694320789#1_0" pos="11" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_2_E_loop" lane="695838779#1_2" pos="8.73" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_1_E_loop" lane="695838779#1_1" pos="8.73" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_0_E_loop" lane="695838779#1_0" pos="8.73" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_0_N_loop" lane="295853897#9_0" pos="17.31" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_htp_lane_0_S_loop" lane="-295853897#11_0" pos="33.24" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_2_W_loop" lane="302756236#2_2" pos="4.38" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_1_W_loop" lane="302756236#2_1" pos="4.38" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_0_W_loop" lane="302756236#2_0" pos="4.38" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_2_E_loop" lane="695838784#1_2" pos="10" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_1_E_loop" lane="695838784#1_1" pos="10" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_0_E_loop" lane="695838784#1_0" pos="10" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_1_N_loop" lane="693841066#9_1" pos="6" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_0_N_loop" lane="693841066#9_0" pos="6" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_1_S_loop" lane="-693841066#11_1" pos="7.22" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+  <inductionLoop id="xoviet_ltn_lane_0_S_loop" lane="-693841066#11_0" pos="7.22" period="300" file="../../datasets/raw/sumo_data/detectors/inductionloop_output_sudden_stop.xml" friendlyPos="true" />
+</additional>

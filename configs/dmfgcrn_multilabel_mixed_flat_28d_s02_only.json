@@ -1,0 +1,153 @@
+{
+  "dataset_output": "datasets/processed/multilabel/dmfgcrn_multilabel_windows_mixed_flat_28d_s02_only.npz",
+  "training_output_dir": "models/outputs_dmfgcrn_multilabel_mixed_flat_28d_s02_only",
+  "dmfgcrn_checkpoint_path": "DMFGCRN/experiments/SUMO/20260512041404/10/best_model.pth",
+  "dmfgcrn_conf_path": "DMFGCRN/config_file/SUMO_DMFGCRN.conf",
+  "feature_cols": [
+    "flow_count_5m",
+    "speed",
+    "speed_missing",
+    "e1_occupancy",
+    "e2_meanOccupancy",
+    "jam_veh"
+  ],
+  "input_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed",
+    "speed_missing"
+  ],
+  "output_features": [
+    "flow_count_5m",
+    "e1_occupancy",
+    "speed"
+  ],
+  "nodes": [
+    "30_4_htp_lane_N",
+    "30_4_htp_lane_S",
+    "30_4_lnh_lane_N",
+    "30_4_lnh_lane_S",
+    "30_4_ltn_lane_N",
+    "30_4_ltn_lane_S",
+    "pdl_htp_lane_E",
+    "pdl_htp_lane_N",
+    "pdl_htp_lane_S",
+    "pdl_htp_lane_W",
+    "pdl_lnh_lane_E",
+    "pdl_lnh_lane_N",
+    "pdl_lnh_lane_S",
+    "pdl_lnh_lane_W",
+    "pdl_ltn_lane_E",
+    "pdl_ltn_lane_N",
+    "pdl_ltn_lane_S",
+    "pdl_ltn_lane_W",
+    "xoviet_htp_lane_E",
+    "xoviet_htp_lane_N",
+    "xoviet_htp_lane_S",
+    "xoviet_htp_lane_W",
+    "xoviet_lnh_lane_E",
+    "xoviet_lnh_lane_N",
+    "xoviet_lnh_lane_S",
+    "xoviet_lnh_lane_W",
+    "xoviet_ltn_lane_E",
+    "xoviet_ltn_lane_N",
+    "xoviet_ltn_lane_S",
+    "xoviet_ltn_lane_W"
+  ],
+  "sources": [
+    {
+      "name": "mixed_flat_7d_s02",
+      "path": "datasets/processed/mixed_flat_7d_s02/forecast_mixed_flat_7d_s02_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.2
+    },
+    {
+      "name": "mixed_flat_7d_s02_w2",
+      "path": "datasets/processed/mixed_flat_7d_s02_w2/forecast_mixed_flat_7d_s02_w2_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.2
+    },
+    {
+      "name": "mixed_flat_7d_s02_w3",
+      "path": "datasets/processed/mixed_flat_7d_s02_w3/forecast_mixed_flat_7d_s02_w3_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.2
+    },
+    {
+      "name": "mixed_flat_7d_s02_w4",
+      "path": "datasets/processed/mixed_flat_7d_s02_w4/forecast_mixed_flat_7d_s02_w4_node_level_with_labels.csv",
+      "class_name": null,
+      "multilabel": true,
+      "traffic_scale": 0.2
+    }
+  ],
+  "lag": 12,
+  "steps_per_day": 288,
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "batch_size": 64,
+  "head_epochs": 30,
+  "fine_tune_epochs": 15,
+  "head_lr": 0.001,
+  "backbone_lr": 0.0001,
+  "class_loss_weights": {
+    "accident": 3.0,
+    "congestion_spike": 2.0,
+    "zigzag": 4.0,
+    "sudden_stop": 1.0
+  },
+  "sampling_weights": {
+    "normal": 1.0,
+    "accident": 3.0,
+    "congestion_spike": 2.0,
+    "zigzag": 4.0,
+    "sudden_stop": 1.0
+  },
+  "source_loss_weights": {
+    "mixed_source_id": 0,
+    "accident_only_source_id": 0,
+    "mixed_accident": 3.0,
+    "accident_only": 1.0,
+    "mixed_hard_normal": 2.0,
+    "hard_normal_radius_seconds": 1800
+  },
+  "pos_weight_cap": 20.0,
+  "early_stopping": {
+    "patience": 8,
+    "min_delta": 0.001
+  },
+  "accident_pooling": {
+    "enabled": false
+  },
+  "accident_temporal_policy": {
+    "mixed_source_id": 0,
+    "rolling_windows": 2,
+    "confirmation_windows": 2,
+    "cooldown_seconds": 1800,
+    "step_seconds": 300,
+    "max_latency_seconds": 600,
+    "max_false_alerts_per_day": 2.0
+  },
+  "class_f1_floors": {
+    "congestion_spike": 0.2,
+    "zigzag": 0.2,
+    "sudden_stop": 0.65
+  },
+  "target_fp_max": 0.25,
+  "target_recall_min": 0.75,
+  "generic_threshold_percentile": 85,
+  "single_label_policy": {
+    "priority_label": "accident",
+    "selection": "threshold_ratio",
+    "tie_break_order": [
+      "congestion_spike",
+      "zigzag",
+      "sudden_stop"
+    ]
+  },
+  "device": "cpu",
+  "seed": 42
+}
