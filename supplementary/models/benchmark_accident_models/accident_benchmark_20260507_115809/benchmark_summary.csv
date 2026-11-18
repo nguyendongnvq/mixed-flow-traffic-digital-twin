@@ -1,0 +1,5 @@
+model_name,threshold_percentile,selected_threshold,normal_fp_rate,event_recall,window_detect_ratio,mean_delay_seconds,median_delay_seconds,normal_alert_count,false_alerts_per_hour,output_dir
+lstm_autoencoder,80,0.038216255605220795,0.1884297520661157,0.9343065693430657,0.8196321737203633,796.875,600.0,24,0.21476510067114093,models\benchmark_accident_models\accident_benchmark_20260507_115809\lstm_autoencoder
+gru_autoencoder,80,0.038282327353954315,0.18181818181818182,0.9343065693430657,0.813871039220031,802.734375,600.0,24,0.21476510067114093,models\benchmark_accident_models\accident_benchmark_20260507_115809\gru_autoencoder
+isolation_forest,80,-0.011566033827941484,0.2743801652892562,0.4233576642335766,0.2428539773986262,1233.6206896551723,900.0,34,0.3042505592841163,models\benchmark_accident_models\accident_benchmark_20260507_115809\isolation_forest
+one_class_svm,80,-1.0111752834399628,0.13388429752066117,0.45985401459854014,0.26323953024595614,1540.4761904761904,1200.0,18,0.1610738255033557,models\benchmark_accident_models\accident_benchmark_20260507_115809\one_class_svm

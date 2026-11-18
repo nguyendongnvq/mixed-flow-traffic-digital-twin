@@ -1,0 +1,5 @@
+datasets/raw/sumo_data/anomaly_step_labels_accident.csv filter=lfs diff=lfs merge=lfs -text
+datasets/raw/sumo_data/anomaly_step_labels_baseline.csv filter=lfs diff=lfs merge=lfs -text
+datasets/raw/sumo_data/anomaly_step_labels_congestion_spike.csv filter=lfs diff=lfs merge=lfs -text
+datasets/raw/sumo_data/anomaly_step_labels_sudden_stop.csv filter=lfs diff=lfs merge=lfs -text
+datasets/raw/sumo_data/anomaly_step_labels_zigzag.csv filter=lfs diff=lfs merge=lfs -text

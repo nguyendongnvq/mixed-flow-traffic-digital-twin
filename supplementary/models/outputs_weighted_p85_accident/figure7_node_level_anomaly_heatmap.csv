@@ -1,0 +1,10 @@
+intersection_id,intersection_score,normalized_score,x,y,is_accident_intersection,window_begin,event_id,selection_rule
+30_4_htp,0.00439902,0.0056373635,0.0,2.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+pdl_htp,0.572723,0.733947,1.0,2.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+xoviet_htp,0.064419895,0.08255437,2.0,2.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+30_4_lnh,0.005031807,0.0064482824,0.0,1.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+pdl_lnh,0.7803329,1.0,1.0,1.0,True,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+xoviet_lnh,0.04668565,0.059827864,2.0,1.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+30_4_ltn,0.0060715955,0.007780776,0.0,0.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+pdl_ltn,0.039196193,0.05023009,1.0,0.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
+xoviet_ltn,0.058777314,0.07532338,2.0,0.0,False,119700.0,accident_m295408469_4_116400_14,highest localized detected score
