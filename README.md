@@ -1,79 +1,79 @@
 # NewAnomalyDetector
 
-Dự án mô phỏng giao thông bằng SUMO và phát hiện bốn loại bất thường:
+Traffic simulation with SUMO and detection of four anomaly types:
 
-- `accident`: tai nạn.
-- `congestion_spike`: ùn tắc tăng đột biến.
-- `zigzag`: phương tiện di chuyển zigzag.
-- `sudden_stop`: phương tiện dừng đột ngột.
+- `accident`: traffic accidents.
+- `congestion_spike`: sudden increases in congestion.
+- `zigzag`: vehicles moving in a zigzag pattern.
+- `sudden_stop`: vehicles stopping abruptly.
 
-Hệ thống gồm ba phần chính:
+The system has three main stages:
 
-1. Chạy mô phỏng SUMO và sinh nhãn bất thường.
-2. Chuyển dữ liệu detector của SUMO thành dữ liệu node-level và các cửa sổ thời gian.
-3. Huấn luyện, đánh giá và suy luận bằng LSTM Autoencoder hoặc DMFGCRN.
+1. Run SUMO simulations and generate anomaly labels.
+2. Convert SUMO detector data into node-level datasets and time windows.
+3. Train, evaluate, and run inference using an LSTM Autoencoder or DMFGCRN.
 
-Luồng DMFGCRN đa nhãn là luồng nên dùng khi cần phát hiện tất cả loại bất thường
-trong cùng một mô hình. Luồng LSTM được giữ lại để chạy các baseline đơn nhãn.
+Use the multi-label DMFGCRN workflow to detect all anomaly types with one model.
+The LSTM workflow provides single-label baselines.
 
-> Tất cả lệnh trong tài liệu này được chạy bằng PowerShell tại thư mục gốc của
-> dự án. Ví dụ: `E:\Projects\NewAnomalyDetector`.
+> Run all commands in this guide from the project root using PowerShell.
+> Example project directory: `E:\Projects\NewAnomalyDetector`.
 
-## 1. Cấu trúc thư mục
+## 1. Project structure
 
 ```text
 NewAnomalyDetector/
-|-- configs/                 Cấu hình huấn luyện và tạo dataset
+|-- configs/                 Training and dataset configurations
 |-- datasets/
-|   |-- raw/sumo_data/       XML detector và nhãn thô từ SUMO
-|   `-- processed/           CSV/NPZ đã xử lý
-|-- DMFGCRN/                 Mã nguồn và checkpoint backbone DMFGCRN
-|-- models/                  Checkpoint, metric, biểu đồ và kết quả suy luận
-|-- scripts/                 Pipeline tự động và công cụ đánh giá
+|   |-- raw/sumo_data/        Raw SUMO detector XML and labels
+|   `-- processed/           Processed CSV/NPZ datasets
+|-- DMFGCRN/                 DMFGCRN backbone source and checkpoint
+|-- models/                  Checkpoints, metrics, plots, and inference outputs
+|-- scripts/                 Automated pipelines and evaluation tools
 |-- src/
-|   |-- evaluation/          Suy luận, hiệu chỉnh threshold và đánh giá
-|   |-- models/              Các kiến trúc mô hình
-|   |-- preprocessing/       Tạo cửa sổ dữ liệu
-|   |-- process_rawdata/     Chuyển XML/CSV thành dữ liệu huấn luyện
-|   |-- simulation/          Chạy SUMO và chèn bất thường
-|   `-- train/               Huấn luyện mô hình
-|-- sumo/                    Network, route, scenario và additional files
-|-- main.py                  Entry point của baseline LSTM/DMFGCRN đơn nhãn
-|-- requirements.txt         Dependency Python đã khóa phiên bản
-`-- SUMO-Simulate.xlsx       Cấu hình lưu lượng đầu vào
+|   |-- evaluation/          Inference, threshold calibration, and evaluation
+|   |-- models/              Model architectures
+|   |-- preprocessing/       Time-window construction
+|   |-- process_rawdata/     XML/CSV conversion for training
+|   |-- simulation/          SUMO simulation and anomaly injection
+|   `-- train/               Model training
+|-- sumo/                    Networks, routes, scenarios, and additional files
+|-- main.py                  Single-label LSTM/DMFGCRN baseline entry point
+|-- requirements.txt         Pinned Python dependencies
+`-- SUMO-Simulate.xlsx        Traffic input workbook
 ```
 
-## 2. Yêu cầu hệ thống
+## 2. System requirements
 
-### 2.1 Phần mềm
+### 2.1 Software
 
-- Windows 10/11 và PowerShell.
-- Python 3.13 (phiên bản dùng để kiểm tra các dependency đã khóa). Môi trường `.venv` hiện tại của dự án đã được kiểm tra với
-  Python 3.13.9.
-- SUMO có cả `sumo.exe`, `sumo-gui.exe` và thư mục `tools`.
-- Dung lượng trống đủ cho dataset và checkpoint trong `datasets/` và `models/`.
+- Windows 10/11 and PowerShell.
+- Python 3.13 for the pinned dependencies. The project environment has been
+  tested with Python 3.13.9.
+- SUMO with `sumo.exe`, `sumo-gui.exe`, and the `tools` directory.
+- Enough disk space for datasets and checkpoints in `datasets/` and `models/`.
 
-Mặc định các config huấn luyện DMFGCRN mới chạy trên CPU. Nếu đổi `device` thành
-`cuda`, cần tự cài bản PyTorch tương thích với GPU/CUDA của máy.
+The current DMFGCRN training configurations use the CPU by default. To set
+`device` to `cuda`, install a PyTorch build compatible with your GPU and CUDA setup.
 
-### 2.2 Kiểm tra Python
+### 2.2 Check Python
 
 ```powershell
 python --version
 python -m pip --version
 ```
 
-Nếu máy có nhiều phiên bản Python, có thể dùng Python Launcher:
+If multiple Python versions are installed, inspect them with Python Launcher:
 
 ```powershell
 py -0p
 ```
 
-Chỉ dùng cú pháp như `py -3.13` khi phiên bản đó xuất hiện trong kết quả `py -0p`.
+Use a command such as `py -3.13` only if that version appears in `py -0p`.
 
-### 2.3 Cài đặt và cấu hình SUMO
+### 2.3 Install and configure SUMO
 
-Sau khi cài SUMO, đặt `SUMO_HOME` trỏ đến thư mục cài đặt. Ví dụ:
+After installing SUMO, point `SUMO_HOME` to its installation directory. For example:
 
 ```powershell
 $env:SUMO_HOME = "E:\Projects\Sumo"
@@ -81,8 +81,8 @@ $env:Path = "$env:SUMO_HOME\bin;$env:Path"
 $env:PYTHONPATH = "$env:SUMO_HOME\tools;$env:PYTHONPATH"
 ```
 
-Ba biến trên chỉ tồn tại trong cửa sổ PowerShell hiện tại. Để lưu cho tài khoản
-Windows và dùng ở các terminal mở sau:
+These three environment variables apply only to the current PowerShell window.
+To save them for your Windows user account and future terminals:
 
 ```powershell
 [Environment]::SetEnvironmentVariable(
@@ -106,7 +106,7 @@ $userPythonPath = [Environment]::GetEnvironmentVariable("PYTHONPATH", "User")
 )
 ```
 
-Đóng và mở lại PowerShell, sau đó kiểm tra:
+Close and reopen PowerShell, then check:
 
 ```powershell
 sumo --version
@@ -114,65 +114,65 @@ sumo-gui --version
 python -c "import traci; print(traci.__file__)"
 ```
 
-`traci` được cung cấp bởi thư mục `tools` của SUMO, không nằm trong
-`requirements.txt`. Nếu hai lệnh SUMO chạy được nhưng Python không import được
-`traci`, kiểm tra lại `SUMO_HOME` và `PYTHONPATH`.
+`traci` is provided by SUMO's `tools` directory and is not included in
+`requirements.txt`. If the SUMO commands work but Python cannot import `traci`,
+check `SUMO_HOME` and `PYTHONPATH`.
 
-## 3. Cài đặt dự án
+## 3. Project setup
 
-### 3.1 Mở thư mục dự án
+### 3.1 Open the project directory
 
 ```powershell
 Set-Location E:\Projects\NewAnomalyDetector
 ```
 
-### 3.2 Tạo môi trường ảo
+### 3.2 Create a virtual environment
 
 ```powershell
 python -m venv .venv
 ```
 
-Nếu đã kiểm tra Python Launcher có Python 3.13, có thể chọn rõ phiên bản:
+If Python Launcher lists Python 3.13, you can select it explicitly:
 
 ```powershell
 py -3.13 -m venv .venv
 ```
 
-### 3.3 Kích hoạt môi trường
+### 3.3 Activate the environment
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Nếu PowerShell chặn script bằng lỗi `running scripts is disabled`, chỉ thay đổi
-execution policy cho tiến trình hiện tại rồi kích hoạt lại:
+If PowerShell reports `running scripts is disabled`, change the execution policy
+for the current process only, then activate the environment:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 ```
 
-Sau khi kích hoạt, lệnh `python` phải trỏ vào `.venv`:
+After activation, `python` should point to `.venv`:
 
 ```powershell
 python -c "import sys; print(sys.executable)"
 ```
 
-### 3.4 Cài dependency
+### 3.4 Install dependencies
 
 ```powershell
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-`requirements.txt` hiện khóa PyTorch bản CPU. Kiểm tra các thư viện chính:
+`requirements.txt` pins the CPU build of PyTorch. Check the main libraries:
 
 ```powershell
 python -c "import numpy, pandas, sklearn, torch; print(torch.__version__)"
 python -c "import traci; print('TraCI: OK')"
 ```
 
-Kiểm tra các entry point mà không chạy huấn luyện:
+Check the entry points without starting training:
 
 ```powershell
 python main.py --help
@@ -181,52 +181,55 @@ python -m src.train.train_dmfgcrn_multilabel --help
 python -m src.evaluation.infer_dmfgcrn_multilabel --help
 ```
 
-## 4. Dữ liệu và checkpoint cần có
+## 4. Required data and checkpoints
 
-Bản GitHub giữ mã nguồn, cấu hình, network/route/detector SUMO, workbook đầu vào,
-các bảng mapping tham chiếu và checkpoint backbone khoảng 9 MB. Dataset mô phỏng,
-checkpoint huấn luyện mới, benchmark, báo cáo xuất tự động và archive không nằm
-trong Git. Các file này vẫn được giữ trên máy khi bỏ theo dõi bằng Git.
+The GitHub repository includes source code, configurations, SUMO networks/routes/
+detectors, the input workbook, reference mapping tables, and an approximately
+9 MB backbone checkpoint. Generated simulation datasets, new training checkpoints,
+benchmark results, generated reports, and archives are excluded from Git.
+Removing these files from Git tracking keeps the local copies on disk.
 
-### 4.1 Chạy với dữ liệu có sẵn
+### 4.1 Use existing data
 
-Để chạy nhanh mà không mô phỏng lại SUMO, kiểm tra các file sau:
+To run without repeating the SUMO simulation, check these files:
 
 ```powershell
 Test-Path datasets\processed\multilabel\dmfgcrn_multilabel_windows_flat_7d_s02.npz
 Test-Path DMFGCRN\experiments\SUMO\20260512041404\10\best_model.pth
 ```
 
-Sau khi clone, checkpoint phải có sẵn; dataset cần được tạo lại theo mục 8 hoặc
-được cung cấp riêng. Khi đã chuẩn bị dữ liệu, cả hai lệnh nên trả về `True`:
+After cloning, the backbone checkpoint should be available. Regenerate the dataset
+as described in section 8 or supply it separately. Once data is prepared, both
+commands should return `True`:
 
-- File `.npz` chứa các cửa sổ train/validation/test.
-- File `.pth` là checkpoint backbone DMFGCRN dùng bởi mô hình đa nhãn.
+- The `.npz` file contains train/validation/test windows.
+- The `.pth` file is the DMFGCRN backbone checkpoint used by the multi-label model.
 
-Đường dẫn dataset, nguồn CSV, số node, feature và tỷ lệ chia dữ liệu được khai
-báo trong file JSON tại `configs/`. Khi đổi dataset phải truyền cùng config đã
-dùng để tạo dataset đó.
+Dataset paths, source CSV files, nodes, features, and split ratios are defined in
+JSON files under `configs/`. When changing datasets, use the configuration that
+was used to build the selected dataset.
 
-### 4.2 Tạo lại dữ liệu từ đầu
+### 4.2 Regenerate data from scratch
 
-Cần có:
+You need:
 
 - `SUMO-Simulate.xlsx`.
-- Các file network, route, scenario và additional trong `sumo/`.
-- SUMO và TraCI đã được cấu hình theo mục 2.3.
+- Network, route, scenario, and additional files under `sumo/`.
+- SUMO and TraCI configured as described in section 2.3.
 
-Mô phỏng có thể chạy nhiều giờ tùy số ngày và cấu hình. Các pipeline sẽ tạo file
-lớn và một số script từ chối ghi đè dataset đã tồn tại; nên đổi tên output hoặc
-di chuyển artifact cũ trước khi chạy lại.
+Simulation can take several hours depending on the number of days and the
+configuration. Pipelines generate large files, and some scripts refuse to
+overwrite existing datasets. Choose a new output name or move older artifacts
+before rerunning a pipeline.
 
-## 5. Chạy nhanh DMFGCRN đa nhãn
+## 5. Multi-label DMFGCRN quick start
 
-Luồng này dự đoán đồng thời `accident`, `congestion_spike`, `zigzag` và
-`sudden_stop`. Một cửa sổ có thể chứa nhiều nhãn.
+This workflow predicts `accident`, `congestion_spike`, `zigzag`, and `sudden_stop`
+together. A time window can have multiple labels.
 
-### 5.1 Tạo dataset NPZ từ CSV đã xử lý
+### 5.1 Build an NPZ dataset from processed CSV files
 
-Nếu file NPZ đã tồn tại và không cần tạo lại, bỏ qua bước này:
+Skip this step if the NPZ file already exists and does not need rebuilding:
 
 ```powershell
 python -m src.preprocessing.build_multilabel_dataset `
@@ -234,7 +237,7 @@ python -m src.preprocessing.build_multilabel_dataset `
   --output datasets\processed\multilabel\dmfgcrn_multilabel_windows_flat_7d_s02.npz
 ```
 
-Có thể giới hạn số cửa sổ mỗi nguồn để smoke test:
+For a smoke test, limit the number of windows per source:
 
 ```powershell
 python -m src.preprocessing.build_multilabel_dataset `
@@ -243,14 +246,14 @@ python -m src.preprocessing.build_multilabel_dataset `
   --max-windows-per-source 100
 ```
 
-### 5.2 Huấn luyện
+### 5.2 Train
 
-Config `dmfgcrn_multilabel_flat_7d_s02.json` ở bước trước chỉ mô tả cách dựng
-dataset. Khi huấn luyện, dùng `dmfgcrn_multilabel.json` vì file này có thêm
-checkpoint backbone, hyperparameter và chính sách threshold; đường dẫn dataset
-được ghi đè bằng `--dataset`.
+The `dmfgcrn_multilabel_flat_7d_s02.json` configuration above only defines dataset
+construction. For training, use `dmfgcrn_multilabel.json`, which also specifies
+the backbone checkpoint, hyperparameters, and threshold policy. Override its
+dataset path with `--dataset`.
 
-Chạy đầy đủ:
+Full training:
 
 ```powershell
 python -m src.train.train_dmfgcrn_multilabel `
@@ -259,7 +262,7 @@ python -m src.train.train_dmfgcrn_multilabel `
   --output-dir models\outputs_dmfgcrn_multilabel_flat_7d_s02
 ```
 
-Smoke test ngắn để kiểm tra toàn bộ luồng trước khi train dài:
+Run a short smoke test to check the workflow before a longer training run:
 
 ```powershell
 python -m src.train.train_dmfgcrn_multilabel `
@@ -272,14 +275,14 @@ python -m src.train.train_dmfgcrn_multilabel `
   --max-eval-samples 100
 ```
 
-Artifact quan trọng trong thư mục output:
+Important output artifacts:
 
-- `dmfgcrn_multilabel.pt`: checkpoint dùng cho suy luận.
-- `test_metrics_by_class.csv`: precision, recall, F1 theo từng lớp.
-- `test_summary.json`: tổng hợp kết quả trên tập test.
-- Các file threshold và dự đoán được sinh theo cấu hình của lần train.
+- `dmfgcrn_multilabel.pt`: checkpoint for inference.
+- `test_metrics_by_class.csv`: precision, recall, and F1 for each class.
+- `test_summary.json`: test-set results summary.
+- Threshold and prediction files generated according to the training configuration.
 
-### 5.3 Suy luận
+### 5.3 Run inference
 
 ```powershell
 python -m src.evaluation.infer_dmfgcrn_multilabel `
@@ -289,16 +292,16 @@ python -m src.evaluation.infer_dmfgcrn_multilabel `
   --output-csv models\outputs_dmfgcrn_multilabel_flat_7d_s02\test_predictions.csv
 ```
 
-Ý nghĩa cột `status` trong kết quả:
+The output `status` column means:
 
-- `known_anomaly`: ít nhất một lớp vượt threshold riêng.
-- `unknown_anomaly`: không lớp nào vượt threshold riêng nhưng residual tổng cao.
-- `normal`: xác suất các lớp và residual đều dưới threshold.
+- `known_anomaly`: at least one class exceeds its class-specific threshold.
+- `unknown_anomaly`: no class exceeds its threshold, but the aggregate residual is high.
+- `normal`: class probabilities and the residual are below their thresholds.
 
-## 6. Chạy mô hình DMFGCRN hai giai đoạn
+## 6. Two-stage DMFGCRN
 
-Mô hình hai giai đoạn gồm detector bất thường và router phân loại loại bất
-thường. Pipeline huấn luyện ba seed và đánh giá ensemble:
+The two-stage model combines an anomaly detector with a router that classifies
+the anomaly type. The pipeline trains three seeds and evaluates an ensemble:
 
 ```powershell
 python -m scripts.run_two_stage_training `
@@ -307,7 +310,7 @@ python -m scripts.run_two_stage_training `
   --output-root models\outputs_dmfgcrn_two_stage_v2_s02_s06
 ```
 
-Đánh giá ensemble:
+Evaluate the ensemble:
 
 ```powershell
 python -m scripts.evaluate_two_stage_ensemble `
@@ -316,7 +319,7 @@ python -m scripts.evaluate_two_stage_ensemble `
   --output-dir models\outputs_dmfgcrn_two_stage_ensemble_v2_s02_s06
 ```
 
-Smoke test có sẵn qua cờ `--smoke`:
+Use `--smoke` for a short training run:
 
 ```powershell
 python -m scripts.run_two_stage_training `
@@ -326,25 +329,25 @@ python -m scripts.run_two_stage_training `
   --smoke
 ```
 
-## 7. Chạy baseline LSTM/DMFGCRN đơn nhãn
+## 7. Single-label LSTM/DMFGCRN baselines
 
-`main.py` dùng cho baseline LSTM Autoencoder hoặc backend DMFGCRN đơn nhãn, tùy
-giá trị `model_backend` trong config.
+`main.py` runs either the LSTM Autoencoder baseline or the single-label DMFGCRN
+backend, depending on `model_backend` in the configuration.
 
-| Loại bất thường | Config LSTM |
+| Anomaly type | LSTM configuration |
 |---|---|
-| Tai nạn | `configs/lstm_autoencoder_accident.json` |
-| Ùn tắc đột biến | `configs/lstm_autoencoder_congestion.json` |
+| Accident | `configs/lstm_autoencoder_accident.json` |
+| Congestion spike | `configs/lstm_autoencoder_congestion.json` |
 | Zigzag | `configs/lstm_autoencoder_zigzag.json` |
-| Dừng đột ngột | `configs/lstm_autoencoder_sudden_stop_target075.json` |
+| Sudden stop | `configs/lstm_autoencoder_sudden_stop_target075.json` |
 
-Chạy một config:
+Run one configuration:
 
 ```powershell
 python main.py --config configs\lstm_autoencoder_accident.json
 ```
 
-Chạy lần lượt bốn config:
+Run all four configurations in sequence:
 
 ```powershell
 $configs = @(
@@ -355,61 +358,62 @@ $configs = @(
 )
 
 foreach ($config in $configs) {
-  Write-Host "Đang chạy $config"
+  Write-Host "Running $config"
   python main.py --config $config
   if ($LASTEXITCODE -ne 0) {
-    throw "Pipeline thất bại tại config: $config"
+    throw "Pipeline failed for config: $config"
   }
 }
 ```
 
-Backend DMFGCRN đơn nhãn:
+Single-label DMFGCRN backend:
 
 ```powershell
 python main.py --config configs\dmfgcrn_accident.json
 ```
 
-Artifact thường có trong `output_dir` của config:
+Typical artifacts in the configuration's `output_dir`:
 
-- `pilot_summary.json` và `pilot_summary.csv`.
+- `pilot_summary.json` and `pilot_summary.csv`.
 - `event_eval_alert.csv`.
 - `accident_window_result.csv`.
-- Checkpoint `*.pt`.
-- Các biểu đồ phân phối score, tỷ lệ phát hiện và độ trễ.
+- A `*.pt` checkpoint.
+- Score distribution, detection rate, and delay plots.
 
-## 8. Tạo lại dữ liệu từ SUMO
+## 8. Regenerate data with SUMO
 
-### 8.1 Chạy thử có giao diện
+### 8.1 Inspect the simulation with the GUI
 
-Các config `mixed*` đi kèm đã có scenario và detector tương ứng. Khi tạo variant
-mới, công cụ dùng template ngay trong repository:
+The included `mixed*` configurations already have matching scenarios and
+detectors. To create a new variant, the generator uses a template from this
+repository:
 
 ```powershell
 python -m src.simulation.build_mixed_simulation_config --variant mixed_smoke --days 1 --force
 ```
 
-Lệnh `--force` ghi lại config/scenario của variant đã tồn tại; chỉ dùng khi muốn
-tạo lại chúng. Để kiểm tra nhanh khởi động SUMO mà không chạy cả ngày, thêm
-`--max-seconds 600 --no-gui` vào lệnh runner. Dữ liệu 600 giây chưa đủ để train.
+`--force` overwrites an existing variant's configuration and scenario files;
+use it only when you intend to regenerate them. To check SUMO startup without
+running a full day, add `--max-seconds 600 --no-gui` to the runner command.
+A 600-second dataset is not sufficient for training.
 
-Hai scenario cũ `named_roads_peak_hours.sumocfg` và
-`named_roads_peak_hours_wide_coverage.sumocfg` thiếu route đầu vào tương ứng;
-chúng đã được bỏ khỏi bản GitHub và chỉ giữ cục bộ. Route cũ
-`named_roads.rou.xml` cũng được bỏ theo dõi vì không còn được tham chiếu.
-Các flow runner dùng `named_roads_updated.*` trong hướng dẫn này không phụ thuộc
-ba file đó. Preset một ngày `named_roads.sumocfg` vẫn được giữ vì có tham số riêng
-và dùng route cập nhật. Các preset JSON và bộ SUMO tuần/seed khác nhau vẫn được giữ
-để tái tạo thí nghiệm.
+The legacy scenarios `named_roads_peak_hours.sumocfg` and
+`named_roads_peak_hours_wide_coverage.sumocfg` are missing their route inputs.
+They are excluded from GitHub and retained only locally. The old route
+`named_roads.rou.xml` is also untracked because it is no longer referenced.
+The `named_roads_updated.*` runner workflows in this guide do not depend on
+those three files. The one-day preset `named_roads.sumocfg` is retained because
+it has distinct parameters and uses the updated route. JSON presets and SUMO
+variants for different weeks/seeds are retained for reproducibility.
 
-
-Dùng GUI để kiểm tra network, route và hành vi bất thường:
+Use the GUI to inspect the network, routes, and anomaly behavior:
 
 ```powershell
 python -m src.simulation.xlsx_traci_flow_runner `
   --config src\simulation\configs\xlsx_traci_flow_config.mixed_smoke.json
 ```
 
-Chạy không giao diện để xử lý nhanh hơn:
+Run without the GUI for faster processing:
 
 ```powershell
 python -m src.simulation.xlsx_traci_flow_runner `
@@ -417,18 +421,18 @@ python -m src.simulation.xlsx_traci_flow_runner `
   --no-gui
 ```
 
-Phải chạy runner bằng `python -m ...` vì module sử dụng relative import.
+Run the simulation with `python -m ...` because the module uses relative imports.
 
-### 8.2 Pipeline mixed 7 ngày
+### 8.2 Seven-day mixed pipeline
 
-Script sau tự động:
+The following script automatically:
 
-1. Tạo config và scenario SUMO.
-2. Chạy mô phỏng.
-3. Export detector XML thành timeseries.
-4. Tạo dữ liệu forecast node-level.
-5. Gắn nhãn theo node.
-6. Đóng gói dataset DMFGCRN đa nhãn.
+1. Generates SUMO configurations and scenarios.
+2. Runs the simulation.
+3. Exports detector XML to time series.
+4. Builds node-level forecast data.
+5. Assigns node-level labels.
+6. Packages the multi-label DMFGCRN dataset.
 
 ```powershell
 .\scripts\run_mixed_flat_7d_pipeline.ps1 `
@@ -437,18 +441,17 @@ Script sau tự động:
   -TrafficScale 0.6
 ```
 
-Các tùy chọn hữu ích:
+Useful options:
 
-- `-SkipSimulation`: bỏ qua mô phỏng nếu XML và nhãn đã tồn tại.
-- `-ForceConfig`: ghi lại config/scenario do script tạo.
-- `-MaxWindowsPerSource 100`: giới hạn dữ liệu để smoke test.
+- `-SkipSimulation`: skip simulation if XML files and labels already exist.
+- `-ForceConfig`: overwrite configurations/scenarios generated by the script.
+- `-MaxWindowsPerSource 100`: limit data for a smoke test.
 
-Log được ghi vào `.tmp\<variant>_run.log` và
-`.tmp\<variant>_pipeline.log`.
+Logs are written to `.tmp\<variant>_run.log` and `.tmp\<variant>_pipeline.log`.
 
-### 8.3 Chạy thủ công từng bước
+### 8.3 Run each step manually
 
-Ví dụ với variant `mixed_flat_7d_s02`:
+Example using the `mixed_flat_7d_s02` variant:
 
 ```powershell
 python -m src.simulation.xlsx_traci_flow_runner `
@@ -456,7 +459,7 @@ python -m src.simulation.xlsx_traci_flow_runner `
   --no-gui
 ```
 
-Export XML detector thành timeseries:
+Export detector XML to time series:
 
 ```powershell
 python -m src.process_rawdata.export_timeseries `
@@ -468,7 +471,7 @@ python -m src.process_rawdata.export_timeseries `
   --strict
 ```
 
-Tạo CSV forecast node-level:
+Build the node-level forecast CSV:
 
 ```powershell
 python -m src.process_rawdata.build_forecast_node_level_from_timeseries `
@@ -479,7 +482,7 @@ python -m src.process_rawdata.build_forecast_node_level_from_timeseries `
   --strict
 ```
 
-Gắn nhãn đa lớp theo node:
+Assign multiple anomaly labels to each node:
 
 ```powershell
 python -m src.process_rawdata.build_mixed_node_labels `
@@ -489,35 +492,35 @@ python -m src.process_rawdata.build_mixed_node_labels `
   --output datasets\processed\mixed_flat_7d_s02\forecast_mixed_flat_7d_s02_node_level_with_labels.csv
 ```
 
-Sau đó chạy bước tạo NPZ ở mục 5.1 với config tương ứng.
+Then build the NPZ dataset as described in section 5.1 with the matching configuration.
 
-## 9. Đọc kết quả đánh giá
+## 9. Interpret evaluation results
 
-Các metric chính:
+Main metrics:
 
-- `precision`: tỷ lệ cảnh báo đúng trên tổng số cảnh báo.
-- `recall`: tỷ lệ bất thường thực tế được phát hiện.
-- `f1`: trung bình điều hòa giữa precision và recall.
-- `normal_fp_rate`: tỷ lệ cửa sổ bình thường bị cảnh báo nhầm.
-- `event_recall`: tỷ lệ sự kiện bất thường được phát hiện.
-- `window_detect_ratio`: tỷ lệ cửa sổ bất thường được phát hiện.
-- `mean_delay_seconds`: độ trễ phát hiện trung bình.
-- `false_alerts_per_hour`: số cảnh báo sai mỗi giờ.
+- `precision`: correct alerts divided by all alerts.
+- `recall`: the proportion of actual anomalies detected.
+- `f1`: the harmonic mean of precision and recall.
+- `normal_fp_rate`: the proportion of normal windows incorrectly flagged.
+- `event_recall`: the proportion of anomaly events detected.
+- `window_detect_ratio`: the proportion of anomalous windows detected.
+- `mean_delay_seconds`: average detection delay.
+- `false_alerts_per_hour`: number of false alerts per hour.
 
-Không đánh giá mô hình chỉ bằng accuracy vì dữ liệu bất thường mất cân bằng.
-Khi so sánh checkpoint, cần đọc đồng thời recall, F1 và false-positive rate trên
-cùng dataset và cùng cách hiệu chỉnh threshold.
+Do not evaluate the model using accuracy alone: anomaly data is imbalanced.
+When comparing checkpoints, consider recall, F1, and the false-positive rate
+together, using the same dataset and threshold calibration procedure.
 
-## 10. Xử lý lỗi thường gặp
+## 10. Troubleshooting
 
-### Không kích hoạt được `.venv`
+### Cannot activate `.venv`
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
 ```
 
-Hoặc không kích hoạt môi trường và gọi Python trực tiếp:
+Alternatively, call Python directly without activating the environment:
 
 ```powershell
 .\.venv\Scripts\python.exe main.py --help
@@ -531,7 +534,7 @@ $env:PYTHONPATH = "$env:SUMO_HOME\tools;$env:PYTHONPATH"
 python -c "import traci; print(traci.__file__)"
 ```
 
-### Không tìm thấy `sumo` hoặc `sumo-gui`
+### `sumo` or `sumo-gui` not found
 
 ```powershell
 $env:Path = "$env:SUMO_HOME\bin;$env:Path"
@@ -539,34 +542,34 @@ Get-Command sumo
 Get-Command sumo-gui
 ```
 
-### Lỗi relative import khi chạy mô phỏng
+### Relative import errors when running simulations
 
-Đúng:
+Correct:
 
 ```powershell
 python -m src.simulation.xlsx_traci_flow_runner --config <config.json>
 ```
 
-Sai:
+Incorrect:
 
 ```powershell
 python src\simulation\xlsx_traci_flow_runner.py --config <config.json>
 ```
 
-### Thiếu detector XML
+### Missing detector XML
 
-Kiểm tra các file trong `datasets\raw\sumo_data\detectors`:
+Check the files in `datasets\raw\sumo_data\detectors`:
 
 ```powershell
 Get-ChildItem datasets\raw\sumo_data\detectors\*.xml
 ```
 
-Nếu thiếu, kiểm tra `sumocfg`, additional file, đường dẫn output detector và log
-mô phỏng trong `.tmp`.
+If files are missing, check the `sumocfg`, additional files, detector output
+paths, and simulation logs in `.tmp`.
 
-### Thiếu file nhãn
+### Missing label files
 
-Với một variant mixed, cần có tối thiểu:
+A mixed variant requires at least:
 
 ```text
 anomaly_step_labels_<variant>.csv
@@ -574,36 +577,36 @@ anomaly_window_labels_<variant>.csv
 anomaly_spawn_records_<variant>.json
 ```
 
-Các file này phải nằm trong `datasets\raw\sumo_data` hoặc thư mục được truyền vào
+These files must be in `datasets\raw\sumo_data` or the directory passed to
 `--scenarios-dir`.
 
-### Không tìm thấy checkpoint DMFGCRN
+### DMFGCRN checkpoint not found
 
-Kiểm tra đường dẫn checkpoint trong config:
+Check the checkpoint path in the configuration:
 
 ```powershell
 Test-Path DMFGCRN\experiments\SUMO\20260512041404\10\best_model.pth
 ```
 
-Nếu dùng checkpoint khác, cập nhật đúng trường checkpoint trong file JSON và
-giữ nguyên kiến trúc, số node, input feature tương ứng với checkpoint đó.
+If using a different checkpoint, update the corresponding JSON field and keep
+the architecture, node count, and input features consistent with that checkpoint.
 
-### Hết RAM khi tạo dataset hoặc train
+### Out of memory while building datasets or training
 
-- Dùng `--max-windows-per-source` khi tạo NPZ.
-- Dùng `--max-train-samples` và `--max-eval-samples` khi smoke test.
-- Giảm `batch_size` trong config.
-- Không nạp đồng thời nhiều dataset `.npz` lớn.
+- Use `--max-windows-per-source` when building NPZ files.
+- Use `--max-train-samples` and `--max-eval-samples` for smoke tests.
+- Reduce `batch_size` in the configuration.
+- Avoid loading multiple large `.npz` datasets at the same time.
 
-## 11. Quy tắc khi chạy lại thí nghiệm
+## 11. Rerunning experiments
 
-- Không ghi đè checkpoint hoặc kết quả đang dùng; tạo `output-dir` mới.
-- Lưu lại config cùng output để tái lập thí nghiệm.
-- Giữ `seed`, cách chia train/validation/test và dataset cố định khi so sánh.
-- Không chọn threshold trực tiếp trên tập test.
-- Kiểm tra log và exit code trước khi dùng artifact của pipeline tiếp theo.
+- Do not overwrite checkpoints or results that are still in use; choose a new `output-dir`.
+- Save the configuration alongside outputs for reproducibility.
+- Keep the `seed`, train/validation/test split, and dataset fixed when comparing runs.
+- Do not select thresholds directly on the test set.
+- Check logs and exit codes before using artifacts in the next pipeline stage.
 
-## 12. Kiểm tra trước khi đưa lên GitHub
+## 12. Checks before publishing to GitHub
 
 ```powershell
 python -m pip check
@@ -612,12 +615,19 @@ git status --short
 git diff --cached --stat
 ```
 
-Test `test_repository_inputs.py` kiểm tra đầu vào của toàn bộ config runner,
-tham chiếu network/route/additional của mọi scenario được phát hành, checkpoint
-trong config huấn luyện và bảng mapping để phát hiện file thiếu trên bản clone.
-Unit test không thay thế chạy thử mô phỏng → xử lý → train → infer.
+`test_repository_inputs.py` checks inputs for every runner configuration,
+network/route/additional references in all published scenarios, checkpoints
+specified by training configurations, and reference mapping tables. Unit tests
+do not replace testing the complete simulation → processing → training → inference workflow.
 
-Các flow two-stage/ensemble cần checkpoint base và các seed được huấn luyện
-trước bằng các script tương ứng; output thí nghiệm không được phát hành kèm Git.
-`.gitignore` không xóa artifact trong lịch sử commit. Remote hiện tại có thể vẫn
-trỏ GitLab; kiểm tra `git remote -v` trước khi tự cấu hình GitHub và push.
+The two-stage/ensemble workflows require base checkpoints and trained seeds from
+the corresponding scripts. Experiment outputs are not distributed through Git.
+`.gitignore` does not remove artifacts from existing commits. Your local remote
+may still point to GitLab; check `git remote -v` before configuring GitHub and pushing.
+
+## 13. References and acknowledgments
+
+This project's DMFGCRN backbone uses and adapts code from
+[OvOYu/DMFGCRN](https://github.com/OvOYu/DMFGCRN). We thank the authors for sharing
+their implementation, which provided a foundation for developing and evaluating
+this traffic anomaly detection system.
