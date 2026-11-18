@@ -191,6 +191,11 @@ Removing these files from Git tracking keeps the local copies on disk.
 
 ### 4.1 Use existing data
 
+Pre-generated datasets and related images are available in the shared
+[Google Drive folder](https://drive.google.com/drive/folders/1ylqXFEVje3tHbs622pYU-0lq_bVigWzw?usp=sharing).
+Download the datasets you need and place them at the local paths specified in
+the corresponding JSON configurations under `configs/`.
+
 To run without repeating the SUMO simulation, check these files:
 
 ```powershell
@@ -199,8 +204,8 @@ Test-Path DMFGCRN\experiments\SUMO\20260512041404\10\best_model.pth
 ```
 
 After cloning, the backbone checkpoint should be available. Regenerate the dataset
-as described in section 8 or supply it separately. Once data is prepared, both
-commands should return `True`:
+as described in section 8 or download it from the Google Drive folder above.
+Once data is prepared, both commands should return `True`:
 
 - The `.npz` file contains train/validation/test windows.
 - The `.pth` file is the DMFGCRN backbone checkpoint used by the multi-label model.
